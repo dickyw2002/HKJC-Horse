@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+dist/
+build/
+
+# Local secrets and logs
+.env
+logs/
+
+# Raw HTML/JSON cache and the database. Exports under data/ may be committed.
+cache/
+*.duckdb
+*.duckdb.wal
+data/*.duckdb
+data/*.duckdb.wal

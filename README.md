@@ -4,6 +4,98 @@ A machine-learning project for estimating Hong Kong Jockey Club (HKJC) horse-rac
 
 > This project is for research and educational use. Predictions are uncertain and are not financial advice. Use data only where permitted by the source's terms, robots policy, and applicable law. Do not use automation to place bets.
 
+## Week 1 — local results collector
+
+Week 1 is a polite, resumable collector for **local** Hong Kong meetings (Sha Tin `ST` and Happy Valley `HV`). It does not place bets and it does not republish HKJC data. Overseas simulcast meetings (`S1`, `S2`, `S3`) are ignored.
+
+The current results URL is:
+
+```text
+https://racing.hkjc.com/en-us/local/information/localresults?racedate=YYYY/MM/DD&Racecourse=ST&RaceNo=N
+```
+
+Older `.aspx` results URLs redirect. Meetings before the current season redirect again to `/en-us/local/information/archive/localresults`, which is the same HTML tables. Meeting dates come from the fixture calendar (`/en-us/local/information/fixture?calyear=YYYY&calmonth=MM`) plus the date-list JSON used by the results page dropdown.
+
+### Setup
+
+Requires Python 3.12 and [uv](https://docs.astral.sh/uv/).
+
+```bash
+uv sync
+```
+
+The database file defaults to `data/hkjc.duckdb`. Raw HTML is cached under `cache/`. Both are gitignored.
+
+### Commands
+
+```bash
+# Historical load. Defaults to 2024-01-01 through today in Hong Kong.
+# About one HTTP request per race, so a full run is on the order of 30–40 minutes.
+uv run hkjc backfill --from 2024-01-01 --to 2026-09-27
+
+# Meetings after the latest complete meeting already in the database.
+uv run hkjc update
+
+# CSV and Parquet extracts of every table, including the empty odds_snapshots table.
+uv run hkjc export --out data
+```
+
+Useful flags: `--db`, `--cache`, `--delay` (minimum 1 second), `--force` (redownload). Re-runs skip meetings already marked complete and read cached HTML instead of calling the site again. Rows are upserted, so a repeated race does not duplicate runners or dividends.
+
+### Database
+
+| Table | Contents |
+| --- | --- |
+| `meetings` | Date, `ST`/`HV`, venue name, completeness, race numbers |
+| `races` | Class, distance, rating band, going, course/rail, name, prize, sectionals |
+| `runners` | `finish_position` (text such as `1`, `1 DH`, `WV`), horse number, name, brand code, horse id, jockey, trainer, actual weight, declared horse weight, draw, lengths behind, running positions, finish time, win odds, incident |
+| `dividends` | Pool, winning combination, dividend in HK$ |
+| `odds_snapshots` | Empty. Schema is reserved for later pre-race odds logging |
+| `fetched_pages` | Audit of cached page outcomes (not exported) |
+
+Horse, jockey, and trainer ids are the public ids in the profile links (`HK_2024_K209`, and the short jockey/trainer codes). `lbw` is the original margin token (`---`, `N`, `1-1/4`, …). `lbw_lengths` is a convenience conversion, not an official HKJC field: nose 0.05, short head 0.1, head 0.2, neck (`N`) 0.3, dead-heat and `---` are 0, and `whole-num/den` fractions are added. Unknown tokens stay null.
+
+### Politeness
+
+- Descriptive User-Agent (`HKJCResearchCollector/0.1`), not a browser impersonation.
+- At least 1 second between requests, plus up to 0.35s of jitter. The clock starts at the beginning of each request, so the rate stays near one page per second.
+- Retries with exponential backoff on network errors and HTTP 429/5xx. HTTP 401/403 stops the run.
+- Raw responses are written under `cache/` and are not committed.
+- `racing.hkjc.com/robots.txt` currently returns a site 404 rather than crawl rules. Throttling is still applied.
+
+### Sample cron
+
+Times below are UTC. Hong Kong is UTC+8. Wednesday night Happy Valley cards usually finish before 23:30 HKT. Weekend Sha Tin cards usually finish before 19:00 HKT. The pattern has holiday exceptions, and `update` is safe to run more often because completed meetings are skipped.
+
+```cron
+# Happy Valley, usually Wednesday. 15:30 UTC = 23:30 HKT.
+30 15 * * 3 cd /path/to/HKJC-Horse && uv run hkjc update >> logs/update.log 2>&1
+
+# Sha Tin, usually Saturday and Sunday. 11:00 UTC = 19:00 HKT.
+0 11 * * 0,6 cd /path/to/HKJC-Horse && uv run hkjc update >> logs/update.log 2>&1
+
+# Alternative: one daily run at 16:30 UTC (00:30 HKT) covers both.
+30 16 * * * cd /path/to/HKJC-Horse && uv run hkjc update >> logs/update.log 2>&1
+```
+
+### Tests
+
+```bash
+uv run pytest -m "not live"   # parser, database, and fixture tests
+uv run pytest -m live         # fetches 2026-09-27 Sha Tin and prints race/runner counts
+```
+
+Saved HTML under `tests/fixtures/` is for parser tests only.
+
+### Known limitations
+
+- Live win/place odds are not collected. HKJC serves them from a GraphQL endpoint that accepts only whitelisted persisted queries. `odds_snapshots` is ready for a later logger that records `captured_at` so pre-race prices are not confused with final dividends.
+- Per-horse sectional times live on a separate page and are not ingested. Race-level sectional strings from the results header are stored on `races.sectionals`.
+- Barrier trials, trackwork, and horse-profile fields (age, sex, rating) are out of scope.
+- Gear and equipment codes are not a column on the results table.
+- A meeting that returns "No information." is stored as empty and is not retried after that Hong Kong date.
+- This repository may contain small CSV/Parquet exports for private research. Do not republish them.
+
 ## Goals
 
 - Collect and normalize historical race, horse, jockey, trainer, draw, going, distance, weight, and result data.
@@ -70,34 +162,25 @@ Never calculate a pre-race feature from final results or data published after th
 - Prefect, Dagster, or GitHub Actions for scheduled automation
 - Pandera or Great Expectations for data validation
 
-## Proposed Project Layout
+## Project layout
+
+Week 1:
 
 ```text
 HKJC-Horse/
 |-- README.md
 |-- pyproject.toml
-|-- .env.example
-|-- configs/
-|   |-- training.yaml
-|   `-- tuning.yaml
-|-- data/
-|   |-- raw/
-|   |-- interim/
-|   `-- processed/
-|-- models/
-|-- notebooks/
-|-- reports/
-|   `-- figures/
 |-- src/hkjc_predictor/
-|   |-- ingestion/
-|   |-- features/
-|   |-- models/
-|   |-- evaluation/
-|   `-- pipelines/
-`-- tests/
+|   |-- cli.py
+|   `-- ingestion/
+|-- tests/
+|   `-- fixtures/
+`-- data/          # CSV and Parquet exports; hkjc.duckdb stays local
 ```
 
-Raw data, trained model binaries, credentials, and local experiment databases should not be committed to Git.
+Later modelling work can add `features/`, `models/`, `evaluation/`, and `pipelines/` under `src/hkjc_predictor/`.
+
+The raw HTML cache (`cache/`), the DuckDB file, and credentials are not committed. Small CSV and Parquet exports under `data/` may be committed for this private project when they stay under about 20 MB in total. Do not republish those extracts.
 
 ## Development Roadmap
 
@@ -164,9 +247,9 @@ Suggested promotion gates:
 
 ## Initial Milestones
 
-- [ ] Confirm permitted data sources and document their terms.
-- [ ] Define the runner-level dataset schema.
-- [ ] Build historical ingestion with validation tests.
+- [x] Document the public local-results pages used for private research (see Week 1). Confirm HKJC terms before any use beyond that.
+- [x] Define the runner-level dataset schema (meetings, races, runners, dividends, odds_snapshots).
+- [x] Build historical ingestion with parser tests and a live smoke test.
 - [ ] Add leakage-safe rolling features.
 - [ ] Train and backtest a baseline model.
 - [ ] Add calibration and ranking reports.
