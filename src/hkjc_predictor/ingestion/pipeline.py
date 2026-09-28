@@ -11,6 +11,7 @@ from hkjc_predictor.ingestion.client import (
     FetchResult,
     fixture_cache_name,
     fixture_url,
+    prefer_archive,
     results_cache_name,
     results_url,
 )
@@ -183,8 +184,17 @@ def _ingest_meeting(
     numbers = _stored_numbers(existing)
     page: FetchResult | None = None
     parsed: ParsedRace | None = None
+    archive_meetings: set[tuple[date, str]] = set()
     if not numbers or force:
-        page = _fetch_race(fetcher, meeting_date, racecourse, 1, force=force)
+        page = _fetch_race(
+            fetcher,
+            meeting_date,
+            racecourse,
+            1,
+            force=force,
+            today=today,
+            archive_meetings=archive_meetings,
+        )
         if _blocked(page, summary):
             return
         if page.error or page.text is None:
@@ -315,7 +325,15 @@ def _ingest_meeting(
             and store.page_outcome(cache_key) == "empty"
         ):
             continue
-        result = _fetch_race(fetcher, meeting_date, racecourse, race_no, force=force)
+        result = _fetch_race(
+            fetcher,
+            meeting_date,
+            racecourse,
+            race_no,
+            force=force,
+            today=today,
+            archive_meetings=archive_meetings,
+        )
         if _blocked(result, summary):
             unresolved = True
             break
@@ -397,14 +415,28 @@ def _stored_numbers(existing: dict | None) -> list[int]:
     return [int(part) for part in str(existing["race_numbers"]).split(",") if part]
 
 
-def _fetch_race(fetcher, meeting_date: date, racecourse: str, race_no: int, *, force: bool) -> FetchResult:
-    url = results_url(meeting_date, racecourse, race_no)
+def _fetch_race(
+    fetcher,
+    meeting_date: date,
+    racecourse: str,
+    race_no: int,
+    *,
+    force: bool,
+    today: date,
+    archive_meetings: set[tuple[date, str]],
+) -> FetchResult:
+    archive = (meeting_date, racecourse) in archive_meetings or prefer_archive(meeting_date, today)
+    url = results_url(meeting_date, racecourse, race_no, archive=archive)
     logger.info("fetch %s", url)
-    return fetcher.get_text(
+    result = fetcher.get_text(
         url,
         cache_name=results_cache_name(meeting_date, racecourse, race_no),
         force=force,
     )
+    final_url = (result.final_url or "").lower()
+    if "/archive/" in final_url:
+        archive_meetings.add((meeting_date, racecourse))
+    return result
 
 
 def _blocked(result: FetchResult, summary: RunSummary) -> bool:

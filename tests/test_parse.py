@@ -60,6 +60,11 @@ def test_sha_tin_all_weather_results_page():
     assert race.rating_band == "40-0"
     assert race.going == "GOOD"
     assert race.course == "ALL WEATHER TRACK"
+    assert race.surface == "AWT"
+    assert race.rail is None
+    assert race.season == "2026/27"
+    assert race.race_time_splits == "(23.75) (46.40) (1:10.17)"
+    assert race.n_runners == 12
     assert race.race_name == "TROPICBIRD HANDICAP"
     assert race.prize_hkd == 875_000
     assert race.sectionals and "23.75" in race.sectionals
@@ -117,6 +122,8 @@ def test_happy_valley_turf_results_page():
     assert race.rating_band == "40-0"
     assert race.going == "GOOD"
     assert race.course == 'TURF - "C" Course'
+    assert race.surface == "Turf"
+    assert race.rail == "C"
     assert race.race_name == "NAM FUNG HANDICAP"
     assert race.prize_hkd == 875_000
     assert len(race.runners) == 12
@@ -207,6 +214,54 @@ def test_synthetic_non_finisher_and_dead_heat():
     assert race.dividends[1].winning_combination == "1,3 F"
     assert race.dividends[1].dividend_hkd is None
     assert race.dividends[1].dividend_text == "REFUND"
+
+
+def test_blank_horse_number_two_letter_brand_and_void_columns():
+    html = """
+    <div class="raceMeeting_select"><span class="f_fl">Race Meeting: 15/11/2025 Sha Tin</span></div>
+    <div class="race_tab"><table>
+      <thead><tr><td>RACE 8 (100)</td></tr></thead>
+      <tbody>
+        <tr><td>Class 4 - 1200M</td><td>Going :</td><td></td></tr>
+        <tr><td>VOID HANDICAP</td><td>Course :</td><td>TURF - "B+2" Course</td></tr>
+        <tr><td>HK$ 1,170,000</td><td>Time :</td><td></td></tr>
+      </tbody>
+    </table></div>
+    <table class="draggable"><thead><tr>
+        <td>Pla.</td><td>Horse No.</td><td>Horse</td><td>Jockey</td><td>Trainer</td>
+        <td>Act. Wt.</td><td>Declar. Horse Wt.</td><td>Dr.</td><td>LBW</td><td>Finish Time</td>
+    </tr></thead><tbody>
+        <tr>
+          <td>VOID</td><td></td>
+          <td><a href="/horse?horseid=HK_2023_J313">BEAR CHAMP</a> (AJ313)</td>
+          <td>A Hamelin</td><td>J Size</td>
+          <td>120</td><td>---</td><td></td><td>---</td><td>---</td>
+        </tr>
+        <tr>
+          <td>3 DH</td><td>4</td>
+          <td><a href="/horse?horseid=HK_2022_H170">EIGHTY LIGHT YEARS</a> (H170)</td>
+          <td>Z Purton</td><td>A S Cruz</td>
+          <td>133</td><td>1100</td><td>2</td><td>DH</td><td>1:09.20</td>
+        </tr>
+    </tbody></table>
+    """
+    race = parse_results_page(html)
+    assert isinstance(race, ParsedRace)
+    assert race.surface == "Turf"
+    assert race.rail == "B+2"
+    assert race.going is None
+    void, dead_heat = race.runners
+    assert void.placing == "VOID"
+    assert void.placing_num is None
+    assert void.horse_no is None
+    assert void.horse_code == "AJ313"
+    assert void.horse_id == "HK_2023_J313"
+    assert void.win_odds is None
+    assert void.running_positions is None
+    assert void.declared_horse_weight is None
+    assert dead_heat.placing == "3 DH"
+    assert dead_heat.placing_num == 3
+    assert dead_heat.horse_no == 4
 
 
 def test_abandoned_race_keeps_refund_dividends():

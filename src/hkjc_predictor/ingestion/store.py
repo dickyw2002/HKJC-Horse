@@ -7,7 +7,7 @@ from pathlib import Path
 
 import duckdb
 
-from hkjc_predictor.ingestion.models import ParsedRace, meeting_id
+from hkjc_predictor.ingestion.models import ParsedRace, meeting_id, season_of
 
 TABLES = ("meetings", "races", "runners", "dividends", "odds_snapshots", "fetched_pages")
 EXPORT_TABLES = ("meetings", "races", "runners", "dividends", "odds_snapshots")
@@ -43,6 +43,11 @@ CREATE TABLE IF NOT EXISTS races (
     sectionals VARCHAR,
     source_url VARCHAR,
     abandoned BOOLEAN DEFAULT FALSE,
+    season VARCHAR,
+    surface VARCHAR,
+    rail VARCHAR,
+    n_runners INTEGER,
+    race_time_splits VARCHAR,
     UNIQUE (meeting_date, racecourse, race_no)
 );
 
@@ -51,12 +56,12 @@ CREATE TABLE IF NOT EXISTS runners (
     meeting_date DATE NOT NULL,
     racecourse VARCHAR NOT NULL,
     race_no INTEGER NOT NULL,
-    horse_no INTEGER NOT NULL,
+    horse_no INTEGER,
     finish_position VARCHAR,
     finish_position_num INTEGER,
     horse_name VARCHAR,
     horse_code VARCHAR,
-    horse_id VARCHAR,
+    horse_id VARCHAR NOT NULL,
     jockey VARCHAR,
     jockey_id VARCHAR,
     trainer VARCHAR,
@@ -71,7 +76,8 @@ CREATE TABLE IF NOT EXISTS runners (
     finish_time_seconds DOUBLE,
     win_odds DOUBLE,
     incident VARCHAR,
-    PRIMARY KEY (race_id, horse_no)
+    season VARCHAR,
+    PRIMARY KEY (race_id, horse_id)
 );
 
 CREATE TABLE IF NOT EXISTS dividends (
@@ -128,18 +134,110 @@ class Store:
         self._ensure_columns()
 
     def _ensure_columns(self) -> None:
-        columns = {
+        race_columns = self._column_names("races")
+        for name, ddl in {
+            "abandoned": "BOOLEAN DEFAULT FALSE",
+            "season": "VARCHAR",
+            "surface": "VARCHAR",
+            "rail": "VARCHAR",
+            "n_runners": "INTEGER",
+            "race_time_splits": "VARCHAR",
+        }.items():
+            if name not in race_columns:
+                self.con.execute(f"ALTER TABLE races ADD COLUMN {name} {ddl}")
+        runner_columns = self._column_names("runners")
+        if "season" not in runner_columns:
+            self.con.execute("ALTER TABLE runners ADD COLUMN season VARCHAR")
+        self._migrate_runner_key()
+
+    def _column_names(self, table: str) -> set[str]:
+        rows = self.con.execute(
+            """
+            SELECT column_name
+            FROM information_schema.columns
+            WHERE table_name = ?
+            """,
+            [table],
+        ).fetchall()
+        return {row[0] for row in rows}
+
+    def _migrate_runner_key(self) -> None:
+        """Allow a blank horse number and key runners by horse id.
+
+        Older databases used PRIMARY KEY (race_id, horse_no), which dropped
+        withdrawn rows. horse_id is present on every reference-file row.
+        """
+        info = self.con.execute("PRAGMA table_info('runners')").fetchall()
+        by_name = {row[1]: row for row in info}
+        horse_no = by_name.get("horse_no")
+        horse_id = by_name.get("horse_id")
+        if horse_no is None or horse_id is None:
+            return
+        horse_no_required = bool(horse_no[3])
+        horse_id_is_key = int(horse_id[5] or 0) > 0
+        if not horse_no_required and horse_id_is_key:
+            return
+        self.con.execute("ALTER TABLE runners RENAME TO runners_legacy")
+        self.con.execute(
+            """
+            CREATE TABLE runners (
+                race_id VARCHAR NOT NULL,
+                meeting_date DATE NOT NULL,
+                racecourse VARCHAR NOT NULL,
+                race_no INTEGER NOT NULL,
+                horse_no INTEGER,
+                finish_position VARCHAR,
+                finish_position_num INTEGER,
+                horse_name VARCHAR,
+                horse_code VARCHAR,
+                horse_id VARCHAR NOT NULL,
+                jockey VARCHAR,
+                jockey_id VARCHAR,
+                trainer VARCHAR,
+                trainer_id VARCHAR,
+                actual_weight INTEGER,
+                declared_horse_weight INTEGER,
+                draw INTEGER,
+                lbw VARCHAR,
+                lbw_lengths DOUBLE,
+                running_positions VARCHAR,
+                finish_time VARCHAR,
+                finish_time_seconds DOUBLE,
+                win_odds DOUBLE,
+                incident VARCHAR,
+                season VARCHAR,
+                PRIMARY KEY (race_id, horse_id)
+            )
+            """
+        )
+        legacy_columns = {
             row[0]
             for row in self.con.execute(
                 """
                 SELECT column_name
                 FROM information_schema.columns
-                WHERE table_name = 'races'
+                WHERE table_name = 'runners_legacy'
                 """
             ).fetchall()
         }
-        if "abandoned" not in columns:
-            self.con.execute("ALTER TABLE races ADD COLUMN abandoned BOOLEAN DEFAULT FALSE")
+        season_sql = "season" if "season" in legacy_columns else "NULL"
+        self.con.execute(
+            f"""
+            INSERT INTO runners
+            SELECT
+                race_id, meeting_date, racecourse, race_no, horse_no,
+                finish_position, finish_position_num, horse_name, horse_code,
+                COALESCE(NULLIF(horse_id, ''), 'NOID_' || CAST(horse_no AS VARCHAR)),
+                jockey, jockey_id, trainer, trainer_id, actual_weight,
+                declared_horse_weight, draw, lbw, lbw_lengths, running_positions,
+                finish_time, finish_time_seconds, win_odds, incident,
+                {season_sql}
+            FROM runners_legacy
+            """
+        )
+        self.con.execute("DROP TABLE runners_legacy")
+        self.con.execute("CREATE INDEX IF NOT EXISTS idx_runners_race ON runners(race_id)")
+        self.con.execute("CREATE INDEX IF NOT EXISTS idx_runners_horse ON runners(horse_id)")
 
     def close(self) -> None:
         self.con.close()
@@ -281,8 +379,9 @@ class Store:
                 INSERT INTO races (
                     race_id, meeting_id, meeting_date, racecourse, race_no, season_race_no,
                     race_class, class_line, distance_m, rating_band, going, course,
-                    race_name, prize_hkd, sectionals, source_url, abandoned
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    race_name, prize_hkd, sectionals, source_url, abandoned,
+                    season, surface, rail, n_runners, race_time_splits
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT (race_id) DO UPDATE SET
                     meeting_id = excluded.meeting_id,
                     meeting_date = excluded.meeting_date,
@@ -299,7 +398,12 @@ class Store:
                     prize_hkd = excluded.prize_hkd,
                     sectionals = excluded.sectionals,
                     source_url = excluded.source_url,
-                    abandoned = excluded.abandoned
+                    abandoned = excluded.abandoned,
+                    season = excluded.season,
+                    surface = excluded.surface,
+                    rail = excluded.rail,
+                    n_runners = excluded.n_runners,
+                    race_time_splits = excluded.race_time_splits
                 """,
                 [
                     race.race_key,
@@ -319,46 +423,65 @@ class Store:
                     race.sectionals,
                     race.source_url,
                     race.abandoned,
+                    race.season or season_of(race.meeting_date),
+                    race.surface,
+                    race.rail,
+                    race.n_runners if race.n_runners is not None else len(race.runners),
+                    race.race_time_splits,
                 ],
             )
             self.con.execute("DELETE FROM runners WHERE race_id = ?", [race.race_key])
             self.con.execute("DELETE FROM dividends WHERE race_id = ?", [race.race_key])
-            if race.runners:
+            runner_rows = []
+            for runner in race.runners:
+                horse_id = runner.horse_id or (
+                    f"NOID_{runner.horse_no}" if runner.horse_no is not None else None
+                )
+                if not horse_id:
+                    raise ValueError(f"{race.race_key} has a runner with no horse id or horse number")
+                runner_rows.append(
+                    (
+                        race.race_key,
+                        race.meeting_date,
+                        race.racecourse,
+                        race.race_no,
+                        runner.horse_no,
+                        runner.placing,
+                        runner.placing_num,
+                        runner.horse_name,
+                        runner.horse_code,
+                        horse_id,
+                        runner.jockey,
+                        runner.jockey_id,
+                        runner.trainer,
+                        runner.trainer_id,
+                        runner.actual_weight,
+                        runner.declared_horse_weight,
+                        runner.draw,
+                        runner.lbw,
+                        runner.lbw_lengths,
+                        runner.running_positions,
+                        runner.finish_time,
+                        runner.finish_time_seconds,
+                        runner.win_odds,
+                        runner.incident,
+                        race.season or season_of(race.meeting_date),
+                    )
+                )
+            if runner_rows:
                 self.con.executemany(
                     """
-                    INSERT INTO runners VALUES (
-                        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+                    INSERT INTO runners (
+                        race_id, meeting_date, racecourse, race_no, horse_no,
+                        finish_position, finish_position_num, horse_name, horse_code, horse_id,
+                        jockey, jockey_id, trainer, trainer_id, actual_weight,
+                        declared_horse_weight, draw, lbw, lbw_lengths, running_positions,
+                        finish_time, finish_time_seconds, win_odds, incident, season
+                    ) VALUES (
+                        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
                     )
                     """,
-                    [
-                        (
-                            race.race_key,
-                            race.meeting_date,
-                            race.racecourse,
-                            race.race_no,
-                            runner.horse_no,
-                            runner.placing,
-                            runner.placing_num,
-                            runner.horse_name,
-                            runner.horse_code,
-                            runner.horse_id,
-                            runner.jockey,
-                            runner.jockey_id,
-                            runner.trainer,
-                            runner.trainer_id,
-                            runner.actual_weight,
-                            runner.declared_horse_weight,
-                            runner.draw,
-                            runner.lbw,
-                            runner.lbw_lengths,
-                            runner.running_positions,
-                            runner.finish_time,
-                            runner.finish_time_seconds,
-                            runner.win_odds,
-                            runner.incident,
-                        )
-                        for runner in race.runners
-                    ],
+                    runner_rows,
                 )
             if race.dividends:
                 self.con.executemany(
@@ -397,13 +520,18 @@ class Store:
         order = {
             "meetings": "meeting_date, racecourse",
             "races": "meeting_date, racecourse, race_no",
-            "runners": "race_id, horse_no",
+            "runners": "race_id, horse_id",
             "dividends": "race_id, row_order",
             "odds_snapshots": "snapshot_id",
         }
         for table in EXPORT_TABLES:
             csv_path = out_dir / f"{table}.csv"
             parquet_path = out_dir / f"{table}.parquet"
+            # The checked-in reference extract uses a different header. Leave
+            # those files in place and write the database shape beside them.
+            if table in {"races", "runners"} and _is_reference_results_csv(csv_path):
+                csv_path = out_dir / f"{table}.normalized.csv"
+                parquet_path = out_dir / f"{table}.normalized.parquet"
             for path in (csv_path, parquet_path):
                 if path.exists():
                     path.unlink()
@@ -424,3 +552,11 @@ def _now() -> datetime:
 
 def _sql_path(path: Path) -> str:
     return str(path.resolve()).replace("'", "''")
+
+
+def _is_reference_results_csv(path: Path) -> bool:
+    if not path.is_file():
+        return False
+    with path.open(encoding="utf-8") as handle:
+        header = handle.readline()
+    return header.startswith("date,season,racecourse,")

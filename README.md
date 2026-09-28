@@ -14,7 +14,9 @@ The current results URL is:
 https://racing.hkjc.com/en-us/local/information/localresults?racedate=YYYY/MM/DD&Racecourse=ST&RaceNo=N
 ```
 
-Older `.aspx` results URLs redirect. Meetings before the current season redirect again to `/en-us/local/information/archive/localresults`, which is the same HTML tables. Meeting dates come from the fixture calendar (`/en-us/local/information/fixture?calyear=YYYY&calmonth=MM`) plus the date-list JSON used by the results page dropdown.
+Older `.aspx` results URLs redirect. Meetings older than about a year redirect again to `/en-us/local/information/archive/localresults` (lowercase `racecourse` parameter). That page is the same HTML tables. The collector requests the archive URL directly for those older meetings, and for the rest of a meeting after the first response lands on `/archive/`.
+
+Meeting dates come from the fixture calendar (`/en-us/local/information/fixture?calyear=YYYY&calmonth=MM`) plus the date-list JSON used by the results page dropdown. A fixture response whose calendar header is a different month (an August request can return September) is ignored, so those days are recorded only from the matching month. Runner columns are mapped by header name, so a void race that omits odds and running positions still parses. Brand numbers may have two letters (`AJ313`). Withdrawn rows with a blank horse number are kept.
 
 ### Setup
 
@@ -38,17 +40,20 @@ uv run hkjc update
 
 # CSV and Parquet extracts of every table, including the empty odds_snapshots table.
 uv run hkjc export --out data
+
+# Load the checked-in reference extract. No network.
+uv run hkjc import
 ```
 
-Useful flags: `--db`, `--cache`, `--delay` (minimum 1 second), `--force` (redownload). Re-runs skip meetings already marked complete and read cached HTML instead of calling the site again. Rows are upserted, so a repeated race does not duplicate runners or dividends.
+Useful flags: `--db`, `--cache`, `--delay` (minimum 1 second), `--force` (redownload). Re-runs skip meetings already marked complete and read cached HTML instead of calling the site again. Rows are upserted, so a repeated race does not duplicate runners or dividends. `hkjc import` reads `data/races.csv` and `data/runners.csv` (override with `--races` and `--runners`) and upserts meetings, races, and runners. It does not delete races that are absent from those files, so abandoned placeholders already stored by a scrape stay in the database.
 
 ### Database
 
 | Table | Contents |
 | --- | --- |
 | `meetings` | Date, `ST`/`HV`, venue name, completeness, race numbers |
-| `races` | Class, distance, rating band, going, course/rail, name, prize, sectionals |
-| `runners` | `finish_position` (text such as `1`, `1 DH`, `WV`), horse number, name, brand code, horse id, jockey, trainer, actual weight, declared horse weight, draw, lengths behind, running positions, finish time, win odds, incident |
+| `races` | Class, distance, rating band, going, course, surface, rail, name, prize, sectionals, season, race-time splits. `abandoned` marks a race with no runners |
+| `runners` | `finish_position` kept as text (`1`, `3 DH`, `WV`, `PU`, `DNF`, `VOID`, …), horse number (blank when withdrawn), name, brand code, horse id, jockey, trainer, actual weight, declared horse weight, draw, lengths behind, running positions, finish time, win odds, incident. Primary key is `(race_id, horse_id)` |
 | `dividends` | Pool, winning combination, dividend in HK$ |
 | `odds_snapshots` | Empty. Schema is reserved for later pre-race odds logging |
 | `fetched_pages` | Audit of cached page outcomes (not exported) |
@@ -57,7 +62,25 @@ Horse, jockey, and trainer ids are the public ids in the profile links (`HK_2024
 
 Jockey and trainer ids are filled only when the results page links a profile. Visiting riders and some apprentices are printed as plain text, so the name is stored and the id is null.
 
-The checked-in `data/*.csv` and `data/*.parquet` files are a private snapshot of local meetings from 2024-01-01 through 2026-09-27. Do not republish them. Refresh with `hkjc update` and `hkjc export`.
+### Checked-in results dataset
+
+`data/races.csv` and `data/runners.csv`, with matching `.parquet` files, are a validated local-results extract for **2024-01-01 through 2026-09-27**: **238 meetings, 2,304 races, 28,718 runner rows**. A separate scraper produced them. Load them with `uv run hkjc import` when you do not want to download the pages again. Do not republish them.
+
+Finish position stays text, including `WV`, `WV-A`, `PU`, `DNF`, `VOID`, `WX`, `FE`, `UR`, `DISQ`, `TNP`, `WXNR`, and dead-heat markers such as `3 DH`. Withdrawn horses are rows with a blank horse number; key them by `(date, racecourse, race_no, horse_id)`. `---` on weights, draw, and odds becomes null in the typed columns. `lbw` keeps the original margin token, including `---`. Running-position cells that contain only extra spaces are collapsed on import (`13   ` becomes `13`).
+
+`hkjc export` writes the database tables as CSV and Parquet. When `data/races.csv` or `data/runners.csv` still has this reference header (`date,season,racecourse,...`), export leaves those files and their parquet twins in place and writes `races.normalized.*` and `runners.normalized.*` instead.
+
+`data/meetings.csv`, `data/dividends.csv`, and `data/odds_snapshots.csv` (and their parquet files) are a collector export from the same window. That export also contains empty date-list probes and dividend rows. It is not the same shape as the reference race and runner files.
+
+Compared with this collector's own backfill of the same dates, the 238 meetings match. The collector previously dropped 209 withdrawn rows with no horse number; it now keeps them. The reference files omit five abandoned races that have no result table (listed below). On 2024-01-01 Sha Tin the race fields and finishers match aside from trailing spaces in running positions. On 2026-09-27 Sha Tin the only runner difference was those withdrawn rows. On 2026-09-23 Happy Valley the same withdrawn-row gap appears, and the reference file keeps a literal `---` where the database stores null for weights, draw, and odds.
+
+#### Known gaps in the reference files
+
+- 2025-11-15 Sha Tin race 8 was declared VOID. Runners are kept with finishing position `VOID`. Odds, running positions, and going are blank.
+- Abandoned races have no result table and are not rows in these files: 2024-11-13 Happy Valley races 7–9, and 2025-09-21 Sha Tin races 9–10. A scrape can still store those pages as `races.abandoned` with refund dividends.
+- Fixture days with no results page: 2025-09-24 Happy Valley, and 2026-09-20 Sha Tin ("No information.").
+- `rating_band` is blank for Group, Griffin, and 4-year-old races. `rail` is blank on the all-weather track.
+- Brand numbers can have two letters (for example `AJ313`). The horse id on the profile link drops a letter (`HK_2023_J313`).
 
 ### Politeness
 
@@ -98,7 +121,7 @@ Saved HTML under `tests/fixtures/` is for parser tests only.
 - Barrier trials, trackwork, and horse-profile fields (age, sex, rating) are out of scope.
 - Gear and equipment codes are not a column on the results table.
 - A meeting that returns "No information." is stored as empty and is not retried after that Hong Kong date.
-- Abandoned races (no runners, pool dividends marked `REFUND`) are stored with `races.abandoned` set. `hkjc update` retries any meeting left `partial`.
+- Abandoned races (no runners, pool dividends marked `REFUND`) are stored with `races.abandoned` set when you scrape them. They are absent from the checked-in reference CSVs; see the gaps listed above. `hkjc update` retries any meeting left `partial`.
 - This repository may contain small CSV/Parquet exports for private research. Do not republish them.
 
 ## Goals

@@ -25,6 +25,23 @@ def parse_fixture_page(html: str, *, year: int | None = None, month: int | None 
     """
     tree = HTMLParser(html)
     header_year, header_month = _month_header(tree)
+    if (
+        year is not None
+        and month is not None
+        and header_year is not None
+        and header_month is not None
+        and (header_year, header_month) != (year, month)
+    ):
+        # August requests sometimes return the September calendar. Ignore that
+        # page so the next month fetch is the one that records those meetings.
+        logger.info(
+            "fixture header %s/%s does not match requested %s-%02d",
+            header_month,
+            header_year,
+            year,
+            month,
+        )
+        return []
     year = header_year or year
     month = header_month or month
     if year is None or month is None:

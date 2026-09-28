@@ -11,6 +11,7 @@ from pathlib import Path
 from hkjc_predictor import __version__
 from hkjc_predictor.ingestion.client import PoliteFetcher
 from hkjc_predictor.ingestion.pipeline import backfill, hk_today, update
+from hkjc_predictor.ingestion.reference import import_reference
 from hkjc_predictor.ingestion.store import Store
 
 
@@ -84,6 +85,23 @@ def main(argv: list[str] | None = None) -> int:
         default=Path("data"),
         help="Export directory (default: data/)",
     )
+    import_parser = sub.add_parser(
+        "import",
+        parents=[shared],
+        help="Load data/races.csv and data/runners.csv into DuckDB without scraping",
+    )
+    import_parser.add_argument(
+        "--races",
+        type=Path,
+        default=Path("data/races.csv"),
+        help="Reference races CSV (default: data/races.csv)",
+    )
+    import_parser.add_argument(
+        "--runners",
+        type=Path,
+        default=Path("data/runners.csv"),
+        help="Reference runners CSV (default: data/runners.csv)",
+    )
 
     args = parser.parse_args(argv)
     logging.basicConfig(
@@ -98,6 +116,17 @@ def main(argv: list[str] | None = None) -> int:
             _print_totals(store)
             for path in paths:
                 print(path)
+            return 0
+        if args.command == "import":
+            try:
+                imported = import_reference(store, args.races, args.runners)
+            except ValueError as exc:
+                raise SystemExit(str(exc)) from exc
+            print(
+                f"imported meetings={imported.meetings} "
+                f"races={imported.races} runners={imported.runners}"
+            )
+            _print_totals(store)
             return 0
         with PoliteFetcher(args.cache, min_interval=args.delay) as fetcher:
             if args.command == "backfill":

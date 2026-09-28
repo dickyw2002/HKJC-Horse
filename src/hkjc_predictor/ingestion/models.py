@@ -14,6 +14,12 @@ def race_id(meeting_date: date, racecourse: str, race_no: int) -> str:
     return f"{meeting_date.isoformat()}_{racecourse}_{race_no:02d}"
 
 
+def season_of(meeting_date: date) -> str:
+    """Hong Kong season runs August–July, written ``2025/26``."""
+    year = meeting_date.year if meeting_date.month >= 8 else meeting_date.year - 1
+    return f"{year}/{str(year + 1)[2:]}"
+
+
 @dataclass(frozen=True)
 class MeetingRef:
     meeting_date: date
@@ -22,7 +28,7 @@ class MeetingRef:
 
 @dataclass(frozen=True)
 class ParsedRunner:
-    horse_no: int
+    horse_no: int | None
     placing: str | None
     placing_num: int | None
     horse_name: str | None
@@ -74,6 +80,11 @@ class ParsedRace:
     race_numbers: tuple[int, ...]
     source_url: str | None = None
     abandoned: bool = False
+    season: str | None = None
+    surface: str | None = None
+    rail: str | None = None
+    n_runners: int | None = None
+    race_time_splits: str | None = None
 
     @property
     def meeting_key(self) -> str:

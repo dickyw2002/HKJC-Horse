@@ -10,6 +10,7 @@ import logging
 import random
 import time
 from dataclasses import dataclass
+from datetime import date, timedelta
 from pathlib import Path
 from typing import Callable
 
@@ -23,6 +24,7 @@ USER_AGENT = (
 )
 
 RESULTS_PAGE = "https://racing.hkjc.com/en-us/local/information/localresults"
+ARCHIVE_RESULTS_PAGE = "https://racing.hkjc.com/en-us/local/information/archive/localresults"
 FIXTURE_PAGE = "https://racing.hkjc.com/en-us/local/information/fixture"
 DATE_LIST_URL = (
     "https://racing.hkjc.com/racing/information/json/DateList/LocalResults.aspx"
@@ -34,11 +36,26 @@ BLOCK_STATUSES = {401, 403}
 MAX_BODY_BYTES = 5_000_000
 
 
-def results_url(meeting_date, racecourse: str, race_no: int) -> str:
+def results_url(meeting_date, racecourse: str, race_no: int, *, archive: bool = False) -> str:
+    """Build a local-results URL.
+
+    The archive path uses a lowercase ``racecourse`` parameter. HKJC redirects
+    the current URL there for meetings older than about a year.
+    """
+    if archive:
+        return (
+            f"{ARCHIVE_RESULTS_PAGE}?racedate={meeting_date:%Y/%m/%d}"
+            f"&racecourse={racecourse}&RaceNo={race_no}"
+        )
     return (
         f"{RESULTS_PAGE}?racedate={meeting_date:%Y/%m/%d}"
         f"&Racecourse={racecourse}&RaceNo={race_no}"
     )
+
+
+def prefer_archive(meeting_date: date, today: date) -> bool:
+    """Results older than about a year are served from the archive path."""
+    return meeting_date <= today - timedelta(days=365)
 
 
 def fixture_url(year: int, month: int) -> str:

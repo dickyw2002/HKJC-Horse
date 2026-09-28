@@ -18,6 +18,7 @@ from hkjc_predictor.ingestion.models import (
     ParsedDividend,
     ParsedRace,
     ParsedRunner,
+    season_of,
 )
 
 LOCAL_COURSES = {"ST", "HV"}
@@ -47,7 +48,7 @@ CLASS_LINE_RE = re.compile(
 )
 RACE_HEADER_RE = re.compile(r"RACE\s+(\d+)\s*(?:\((\d+)\))?", re.IGNORECASE)
 PRIZE_RE = re.compile(r"HK\$\s*([0-9][0-9,]*)", re.IGNORECASE)
-HORSE_CODE_RE = re.compile(r"\(([A-Z]\d{3})\)")
+HORSE_CODE_RE = re.compile(r"\(([A-Z]{1,2}\d{3})\)")
 FINISH_RE = re.compile(r"^(\d+):(\d{2})\.(\d+)$")
 FRACTION_RE = re.compile(r"^(?:(\d+)-)?(\d+)/(\d+)$")
 PLACING_RE = re.compile(r"^(\d+)(?:\s*DH)?$", re.IGNORECASE)
@@ -125,6 +126,23 @@ def parse_prize(token: str | None) -> int | None:
     if not match:
         return None
     return int(match.group(1).replace(",", ""))
+
+
+def course_surface_rail(course: str | None) -> tuple[str | None, str | None]:
+    """Split the course cell into surface (Turf/AWT) and rail (``A``, ``C+3``)."""
+    text = clean(course)
+    if not text:
+        return None, None
+    upper = text.upper()
+    if "ALL WEATHER" in upper:
+        surface = "AWT"
+    elif "TURF" in upper:
+        surface = "Turf"
+    else:
+        surface = None
+    rail_match = re.search(r'"([^"]+)"', text)
+    rail = rail_match.group(1) if rail_match else None
+    return surface, rail
 
 
 def _query_param(href: str | None, key: str) -> str | None:
@@ -253,6 +271,7 @@ def _race_info(tree: HTMLParser) -> dict[str, str | None]:
         "course": None,
         "prize": None,
         "sectionals": None,
+        "race_time_splits": None,
     }
     for row in table.css("tbody tr"):
         cells = [clean(td.text()) for td in row.css("td")]
@@ -268,6 +287,8 @@ def _race_info(tree: HTMLParser) -> dict[str, str | None]:
             info["course"] = value or None
         elif label == "time":
             info["prize"] = cells[0] or None
+            splits = [cell for cell in cells[2:] if cell]
+            info["race_time_splits"] = " ".join(splits) or None
         elif "sectional" in label:
             parts = [cell for cell in cells[2:] if cell]
             info["sectionals"] = " | ".join(parts) or None
@@ -345,6 +366,8 @@ def _parse_abandoned_page(
         race_numbers=_linked_race_numbers(tree, racecourse, race_no),
         source_url=source_url,
         abandoned=True,
+        season=season_of(meeting_date),
+        n_runners=0,
     )
 
 
@@ -385,20 +408,31 @@ def _runners(table: Node, incidents: dict[int, str]) -> tuple[ParsedRunner, ...]
     header_row = table.css_first("thead tr")
     if header_row is None:
         raise ParseError("runner table has no header")
+    # Columns are addressed by header name. VOID pages omit odds and running
+    # positions, and withdrawn rows often have a blank horse number.
     index = _header_index([clean(td.text()) for td in header_row.css("td")])
     runners: list[ParsedRunner] = []
-    seen: set[int] = set()
+    seen_ids: set[str] = set()
+    seen_nos: set[int] = set()
     for row in table.css("tbody tr"):
         cells = row.css("td")
         if not cells:
             continue
         horse_cell_no = _cell(cells, index, "horseno")
         horse_no = _parse_int(clean(horse_cell_no.text()) if horse_cell_no else "")
-        if horse_no is None or horse_no in seen:
-            continue
-        seen.add(horse_no)
-        placing, placing_num = _placing(clean(_cell(cells, index, "pla").text()) if _cell(cells, index, "pla") else "")
         horse_name, horse_code, horse_id = _horse_fields(_cell(cells, index, "horse"))
+        if horse_id:
+            if horse_id in seen_ids:
+                continue
+        elif horse_no is None or horse_no in seen_nos:
+            continue
+        if horse_no is not None:
+            if horse_no in seen_nos:
+                continue
+            seen_nos.add(horse_no)
+        if horse_id:
+            seen_ids.add(horse_id)
+        placing, placing_num = _placing(clean(_cell(cells, index, "pla").text()) if _cell(cells, index, "pla") else "")
         jockey, jockey_id = _person_fields(_cell(cells, index, "jockey"), "jockeyid")
         trainer, trainer_id = _person_fields(_cell(cells, index, "trainer"), "trainerid")
         actual = _parse_int(clean(_cell(cells, index, "actwt").text()) if _cell(cells, index, "actwt") else "")
@@ -433,7 +467,7 @@ def _runners(table: Node, incidents: dict[int, str]) -> tuple[ParsedRunner, ...]
                 finish_time=finish_time or None,
                 finish_time_seconds=parse_finish_seconds(finish_time),
                 win_odds=win_odds,
-                incident=incidents.get(horse_no),
+                incident=incidents.get(horse_no) if horse_no is not None else None,
             )
         )
     return tuple(runners)
@@ -532,6 +566,7 @@ def parse_results_page(
     if not runners:
         raise ParseError(f"race {race_no} parsed no runners")
     season = int(info["season_race_no"]) if info["season_race_no"] else None
+    surface, rail = course_surface_rail(info["course"])
     return ParsedRace(
         meeting_date=meeting_date,
         racecourse=racecourse,
@@ -551,4 +586,9 @@ def parse_results_page(
         dividends=_dividends(tree),
         race_numbers=_linked_race_numbers(tree, racecourse, race_no),
         source_url=source_url,
+        season=season_of(meeting_date),
+        surface=surface,
+        rail=rail,
+        n_runners=len(runners),
+        race_time_splits=info["race_time_splits"],
     )

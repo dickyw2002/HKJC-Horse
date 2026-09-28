@@ -17,6 +17,17 @@ def test_january_2024_fixture_lists_local_meetings():
     assert {meeting.racecourse for meeting in meetings} <= {"ST", "HV"}
 
 
+def test_fixture_month_header_must_match_the_requested_month():
+    html = """
+    <table><thead><tr><td colspan="7">9/2024</td></tr></thead>
+    <tbody><tr><td class="calendar">
+      <span class="f_fl">1</span><img alt="ST" src="/st.gif" />
+    </td></tr></tbody></table>
+    """
+    assert parse_fixture_page(html, year=2024, month=8) == []
+    assert parse_fixture_page(html, year=2024, month=9) == [MeetingRef(date(2024, 9, 1), "ST")]
+
+
 def test_datelist_without_venues_and_with_venues():
     unknown = parse_datelist(
         {"MeetingDateList": [{"Key": "2026-09-27T00:00:00", "Value": None}]}

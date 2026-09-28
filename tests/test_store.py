@@ -81,4 +81,23 @@ def test_upsert_is_idempotent_and_export_writes_files(tmp_path):
     csv = (tmp_path / "out" / "runners.csv").read_text(encoding="utf-8")
     assert "ALPHA" in csv
     assert csv.count("\n") == 2
+
+    protected = tmp_path / "reference"
+    protected.mkdir()
+    races_csv = protected / "races.csv"
+    runners_csv = protected / "runners.csv"
+    races_csv.write_text(
+        "date,season,racecourse,race_no\n2024-01-01,2023/24,ST,1\n",
+        encoding="utf-8",
+    )
+    runners_csv.write_text(
+        "date,season,racecourse,race_no,finishing_position\n",
+        encoding="utf-8",
+    )
+    (protected / "races.parquet").write_bytes(b"keep")
+    store.export(protected)
+    assert races_csv.read_text(encoding="utf-8").startswith("date,season,racecourse,")
+    assert (protected / "races.parquet").read_bytes() == b"keep"
+    assert (protected / "races.normalized.csv").exists()
+    assert "ALPHA" in (protected / "runners.normalized.csv").read_text(encoding="utf-8")
     store.close()
