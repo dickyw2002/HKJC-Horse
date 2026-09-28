@@ -53,7 +53,11 @@ Useful flags: `--db`, `--cache`, `--delay` (minimum 1 second), `--force` (redown
 | `odds_snapshots` | Empty. Schema is reserved for later pre-race odds logging |
 | `fetched_pages` | Audit of cached page outcomes (not exported) |
 
-Horse, jockey, and trainer ids are the public ids in the profile links (`HK_2024_K209`, and the short jockey/trainer codes). `lbw` is the original margin token (`---`, `N`, `1-1/4`, …). `lbw_lengths` is a convenience conversion, not an official HKJC field: nose 0.05, short head 0.1, head 0.2, neck (`N`) 0.3, dead-heat and `---` are 0, and `whole-num/den` fractions are added. Unknown tokens stay null.
+Horse, jockey, and trainer ids are the public ids in the profile links (`HK_2024_K209`, and the short jockey/trainer codes). `lbw` is the original margin token (`---`, `N`, `1-1/4`, …). `lbw_lengths` is a convenience conversion, not an official HKJC field: nose 0.05, short head 0.1, head 0.2, neck (`N`) 0.3, dead-heat and `---` are 0, and `whole-num/den` fractions are added. A leading minus on the winner (`-SH`, `-HD`) is stored as a negative winning margin. `ML` (many lengths) stays null. Unknown tokens stay null.
+
+Jockey and trainer ids are filled only when the results page links a profile. Visiting riders and some apprentices are printed as plain text, so the name is stored and the id is null.
+
+The checked-in `data/*.csv` and `data/*.parquet` files are a private snapshot of local meetings from 2024-01-01 through 2026-09-27. Do not republish them. Refresh with `hkjc update` and `hkjc export`.
 
 ### Politeness
 

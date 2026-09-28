@@ -82,6 +82,9 @@ def parse_lbw(token: str | None) -> float | None:
         return None
     if text in LBW_WORDS:
         return LBW_WORDS[text]
+    # A leading minus on the winner is the margin of victory ("-SH", "-HD").
+    if text.startswith("-") and text[1:] in LBW_WORDS:
+        return -LBW_WORDS[text[1:]]
     fraction = FRACTION_RE.fullmatch(text)
     if fraction:
         whole = int(fraction.group(1) or 0)

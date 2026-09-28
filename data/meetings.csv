@@ -1,0 +1,377 @@
+meeting_id,meeting_date,racecourse,venue_name,status,race_count,race_numbers,source_url,updated_at
+2024-01-01_ST,2024-01-01,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/01/01&racecourse=ST&RaceNo=1,2026-09-28 04:12:25.311222
+2024-01-04_HV,2024-01-04,HV,Happy Valley,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/01/04&racecourse=HV&RaceNo=1,2026-09-28 04:12:35.610793
+2024-01-07_ST,2024-01-07,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/01/07&racecourse=ST&RaceNo=1,2026-09-28 04:12:50.697571
+2024-01-10_HV,2024-01-10,HV,Happy Valley,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/01/10&racecourse=HV&RaceNo=1,2026-09-28 04:13:05.490228
+2024-01-13_ST,2024-01-13,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/01/13&racecourse=ST&RaceNo=1,2026-09-28 04:13:19.992048
+2024-01-17_HV,2024-01-17,HV,Happy Valley,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/01/17&racecourse=HV&RaceNo=1,2026-09-28 04:13:32.57385
+2024-01-21_ST,2024-01-21,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/01/21&racecourse=ST&RaceNo=1,2026-09-28 04:13:46.370813
+2024-01-24_ST,2024-01-24,ST,Sha Tin,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/01/24&racecourse=ST&RaceNo=1,2026-09-28 04:13:57.243854
+2024-01-28_ST,2024-01-28,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/01/28&racecourse=ST&RaceNo=1,2026-09-28 04:14:12.153727
+2024-01-31_HV,2024-01-31,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/01/31&racecourse=HV&RaceNo=1,2026-09-28 04:14:27.073155
+2024-02-04_ST,2024-02-04,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/02/04&racecourse=ST&RaceNo=1,2026-09-28 04:14:42.0459
+2024-02-07_HV,2024-02-07,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/02/07&racecourse=HV&RaceNo=1,2026-09-28 04:14:57.446
+2024-02-12_ST,2024-02-12,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/02/12&racecourse=ST&RaceNo=1,2026-09-28 04:15:21.258198
+2024-02-15_HV,2024-02-15,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/02/15&racecourse=HV&RaceNo=1,2026-09-28 04:15:50.302474
+2024-02-18_ST,2024-02-18,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/02/18&racecourse=ST&RaceNo=1,2026-09-28 04:16:12.784363
+2024-02-21_HV,2024-02-21,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/02/21&racecourse=HV&RaceNo=1,2026-09-28 04:16:29.900151
+2024-02-25_ST,2024-02-25,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/02/25&racecourse=ST&RaceNo=1,2026-09-28 04:16:56.773925
+2024-02-28_HV,2024-02-28,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/02/28&racecourse=HV&RaceNo=1,2026-09-28 04:17:13.882813
+2024-03-03_ST,2024-03-03,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/03/03&racecourse=ST&RaceNo=1,2026-09-28 04:17:36.361583
+2024-03-06_HV,2024-03-06,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/03/06&racecourse=HV&RaceNo=1,2026-09-28 04:17:55.21558
+2024-03-10_ST,2024-03-10,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/03/10&racecourse=ST&RaceNo=1,2026-09-28 04:18:15.167006
+2024-03-13_HV,2024-03-13,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/03/13&racecourse=HV&RaceNo=1,2026-09-28 04:18:33.100377
+2024-03-16_ST,2024-03-16,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/03/16&racecourse=ST&RaceNo=1,2026-09-28 04:18:56.458818
+2024-03-20_HV,2024-03-20,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/03/20&racecourse=HV&RaceNo=1,2026-09-28 04:19:10.063052
+2024-03-24_ST,2024-03-24,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/03/24&racecourse=ST&RaceNo=1,2026-09-28 04:19:27.174572
+2024-03-27_HV,2024-03-27,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/03/27&racecourse=HV&RaceNo=1,2026-09-28 04:19:39.682788
+2024-03-31_ST,2024-03-31,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/03/31&racecourse=ST&RaceNo=1,2026-09-28 04:19:54.488593
+2024-04-03_ST,2024-04-03,ST,Sha Tin,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/04/03&racecourse=ST&RaceNo=1,2026-09-28 04:20:10.747163
+2024-04-07_ST,2024-04-07,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/04/07&racecourse=ST&RaceNo=1,2026-09-28 04:20:26.226107
+2024-04-10_HV,2024-04-10,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/04/10&racecourse=HV&RaceNo=1,2026-09-28 04:20:40.892007
+2024-04-14_ST,2024-04-14,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/04/14&racecourse=ST&RaceNo=1,2026-09-28 04:21:02.354144
+2024-04-17_HV,2024-04-17,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/04/17&racecourse=HV&RaceNo=1,2026-09-28 04:21:19.163213
+2024-04-20_ST,2024-04-20,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/04/20&racecourse=ST&RaceNo=1,2026-09-28 04:21:44.310423
+2024-04-24_HV,2024-04-24,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/04/24&racecourse=HV&RaceNo=1,2026-09-28 04:22:05.422513
+2024-04-28_ST,2024-04-28,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/04/28&racecourse=ST&RaceNo=1,2026-09-28 04:22:20.95133
+2024-05-01_HV,2024-05-01,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/05/01&racecourse=HV&RaceNo=1,2026-09-28 04:22:32.976617
+2024-05-05_ST,2024-05-05,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/05/05&racecourse=ST&RaceNo=1,2026-09-28 04:22:51.08584
+2024-05-08_HV,2024-05-08,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/05/08&racecourse=HV&RaceNo=1,2026-09-28 04:23:04.380056
+2024-05-11_ST,2024-05-11,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/05/11&racecourse=ST&RaceNo=1,2026-09-28 04:23:32.497901
+2024-05-15_HV,2024-05-15,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/05/15&racecourse=HV&RaceNo=1,2026-09-28 04:23:48.238298
+2024-05-19_ST,2024-05-19,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/05/19&racecourse=ST&RaceNo=1,2026-09-28 04:24:08.822196
+2024-05-22_HV,2024-05-22,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/05/22&racecourse=HV&RaceNo=1,2026-09-28 04:24:23.059757
+2024-05-26_ST,2024-05-26,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/05/26&racecourse=ST&RaceNo=1,2026-09-28 04:24:41.707043
+2024-05-29_ST,2024-05-29,ST,Sha Tin,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/05/29&racecourse=ST&RaceNo=1,2026-09-28 04:25:01.788229
+2024-06-02_ST,2024-06-02,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/06/02&racecourse=ST&RaceNo=1,2026-09-28 04:25:21.210501
+2024-06-05_HV,2024-06-05,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/06/05&racecourse=HV&RaceNo=1,2026-09-28 04:25:33.727408
+2024-06-08_ST,2024-06-08,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/06/08&racecourse=ST&RaceNo=1,2026-09-28 04:25:49.007298
+2024-06-12_HV,2024-06-12,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/06/12&racecourse=HV&RaceNo=1,2026-09-28 04:26:03.407135
+2024-06-15_ST,2024-06-15,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/06/15&racecourse=ST&RaceNo=1,2026-09-28 04:26:26.910221
+2024-06-23_ST,2024-06-23,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/06/23&racecourse=ST&RaceNo=1,2026-09-28 04:26:48.749689
+2024-06-26_HV,2024-06-26,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/06/26&racecourse=HV&RaceNo=1,2026-09-28 04:27:04.943352
+2024-07-01_ST,2024-07-01,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/07/01&racecourse=ST&RaceNo=1,2026-09-28 04:27:24.9509
+2024-07-04_HV,2024-07-04,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/07/04&racecourse=HV&RaceNo=1,2026-09-28 04:27:39.616094
+2024-07-06_ST,2024-07-06,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/07/06&racecourse=ST&RaceNo=1,2026-09-28 04:28:00.287577
+2024-07-10_HV,2024-07-10,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/07/10&racecourse=HV&RaceNo=1,2026-09-28 04:28:13.154151
+2024-07-14_ST,2024-07-14,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/07/14&racecourse=ST&RaceNo=1,2026-09-28 04:28:37.78539
+2024-09-08_ST,2024-09-08,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/09/08&racecourse=ST&RaceNo=1,2026-09-28 04:28:51.928788
+2024-09-11_HV,2024-09-11,HV,Happy Valley,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/09/11&racecourse=HV&RaceNo=1,2026-09-28 04:29:02.677793
+2024-09-15_ST,2024-09-15,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/09/15&racecourse=ST&RaceNo=1,2026-09-28 04:29:16.48325
+2024-09-18_HV,2024-09-18,HV,Happy Valley,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/09/18&racecourse=HV&RaceNo=1,2026-09-28 04:29:30.603339
+2024-09-22_ST,2024-09-22,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/09/22&racecourse=ST&RaceNo=1,2026-09-28 04:29:48.350268
+2024-09-25_HV,2024-09-25,HV,Happy Valley,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/09/25&racecourse=HV&RaceNo=1,2026-09-28 04:29:59.222408
+2024-09-28_ST,2024-09-28,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/09/28&racecourse=ST&RaceNo=1,2026-09-28 04:30:12.837558
+2024-10-01_ST,2024-10-01,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/10/01&racecourse=ST&RaceNo=1,2026-09-28 04:30:28.110697
+2024-10-06_ST,2024-10-06,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/10/06&racecourse=ST&RaceNo=1,2026-09-28 04:30:48.041624
+2024-10-09_HV,2024-10-09,HV,Happy Valley,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/10/09&racecourse=HV&RaceNo=1,2026-09-28 04:30:58.806204
+2024-10-13_ST,2024-10-13,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/10/13&racecourse=ST&RaceNo=1,2026-09-28 04:31:14.725973
+2024-10-16_HV,2024-10-16,HV,Happy Valley,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/10/16&racecourse=HV&RaceNo=1,2026-09-28 04:31:29.930382
+2024-10-20_ST,2024-10-20,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/10/20&racecourse=ST&RaceNo=1,2026-09-28 04:31:47.815263
+2024-10-23_ST,2024-10-23,ST,Sha Tin,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/10/23&racecourse=ST&RaceNo=1,2026-09-28 04:32:06.848299
+2024-10-27_HV,2024-10-27,HV,Happy Valley,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/10/27&racecourse=HV&RaceNo=1,2026-09-28 04:32:22.843247
+2024-10-30_HV,2024-10-30,HV,Happy Valley,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/10/30&racecourse=HV&RaceNo=1,2026-09-28 04:32:37.018634
+2024-11-03_ST,2024-11-03,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/11/03&racecourse=ST&RaceNo=1,2026-09-28 04:32:52.710956
+2024-11-06_HV,2024-11-06,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/11/06&racecourse=HV&RaceNo=1,2026-09-28 04:33:05.067788
+2024-11-09_ST,2024-11-09,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/11/09&racecourse=ST&RaceNo=1,2026-09-28 04:33:23.157385
+2024-11-13_HV,2024-11-13,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/11/13&racecourse=HV&RaceNo=1,2026-09-28 05:36:30.921084
+2024-11-17_ST,2024-11-17,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/11/17&racecourse=ST&RaceNo=1,2026-09-28 04:33:51.707766
+2024-11-20_HV,2024-11-20,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/11/20&racecourse=HV&RaceNo=1,2026-09-28 04:34:04.199913
+2024-11-24_ST,2024-11-24,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/11/24&racecourse=ST&RaceNo=1,2026-09-28 04:34:23.085319
+2024-11-27_HV,2024-11-27,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/11/27&racecourse=HV&RaceNo=1,2026-09-28 04:34:38.853226
+2024-12-01_ST,2024-12-01,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/12/01&racecourse=ST&RaceNo=1,2026-09-28 04:35:01.186071
+2024-12-04_HV,2024-12-04,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/12/04&racecourse=HV&RaceNo=1,2026-09-28 04:35:13.565198
+2024-12-08_ST,2024-12-08,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/12/08&racecourse=ST&RaceNo=1,2026-09-28 04:35:30.927708
+2024-12-11_HV,2024-12-11,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/12/11&racecourse=HV&RaceNo=1,2026-09-28 04:35:46.582713
+2024-12-15_ST,2024-12-15,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/12/15&racecourse=ST&RaceNo=1,2026-09-28 04:36:01.411679
+2024-12-18_ST,2024-12-18,ST,Sha Tin,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/12/18&racecourse=ST&RaceNo=1,2026-09-28 04:36:12.099839
+2024-12-22_ST,2024-12-22,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/12/22&racecourse=ST&RaceNo=1,2026-09-28 04:36:30.071884
+2024-12-26_HV,2024-12-26,HV,Happy Valley,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/12/26&racecourse=HV&RaceNo=1,2026-09-28 04:36:44.662973
+2024-12-29_ST,2024-12-29,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2024/12/29&racecourse=ST&RaceNo=1,2026-09-28 04:36:59.741286
+2025-01-01_ST,2025-01-01,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/01/01&racecourse=ST&RaceNo=1,2026-09-28 04:37:15.272414
+2025-01-05_ST,2025-01-05,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/01/05&racecourse=ST&RaceNo=1,2026-09-28 04:38:47.519927
+2025-01-08_HV,2025-01-08,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/01/08&racecourse=HV&RaceNo=1,2026-09-28 04:39:02.117945
+2025-01-12_ST,2025-01-12,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/01/12&racecourse=ST&RaceNo=1,2026-09-28 04:39:16.135143
+2025-01-15_HV,2025-01-15,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/01/15&racecourse=HV&RaceNo=1,2026-09-28 04:39:27.509981
+2025-01-19_ST,2025-01-19,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/01/19&racecourse=ST&RaceNo=1,2026-09-28 04:39:42.443298
+2025-01-22_HV,2025-01-22,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/01/22&racecourse=HV&RaceNo=1,2026-09-28 04:39:54.120657
+2025-01-26_ST,2025-01-26,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/01/26&racecourse=ST&RaceNo=1,2026-09-28 04:40:12.023892
+2025-01-31_ST,2025-01-31,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/01/31&racecourse=ST&RaceNo=1,2026-09-28 04:40:28.032865
+2025-02-05_HV,2025-02-05,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/02/05&racecourse=HV&RaceNo=1,2026-09-28 04:40:41.09409
+2025-02-09_ST,2025-02-09,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/02/09&racecourse=ST&RaceNo=1,2026-09-28 04:40:58.251087
+2025-02-12_ST,2025-02-12,ST,Sha Tin,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/02/12&racecourse=ST&RaceNo=1,2026-09-28 04:41:09.733224
+2025-02-16_ST,2025-02-16,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/02/16&racecourse=ST&RaceNo=1,2026-09-28 04:41:26.181995
+2025-02-19_HV,2025-02-19,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/02/19&racecourse=HV&RaceNo=1,2026-09-28 04:41:42.881656
+2025-02-23_ST,2025-02-23,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/02/23&racecourse=ST&RaceNo=1,2026-09-28 04:41:59.557703
+2025-02-26_HV,2025-02-26,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/02/26&racecourse=HV&RaceNo=1,2026-09-28 04:42:10.840101
+2025-03-02_ST,2025-03-02,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/03/02&racecourse=ST&RaceNo=1,2026-09-28 04:42:24.763813
+2025-03-05_HV,2025-03-05,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/03/05&racecourse=HV&RaceNo=1,2026-09-28 04:42:40.685305
+2025-03-09_ST,2025-03-09,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/03/09&racecourse=ST&RaceNo=1,2026-09-28 04:43:04.676946
+2025-03-12_HV,2025-03-12,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/03/12&racecourse=HV&RaceNo=1,2026-09-28 04:43:18.469283
+2025-03-15_ST,2025-03-15,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/03/15&racecourse=ST&RaceNo=1,2026-09-28 04:43:32.20699
+2025-03-19_HV,2025-03-19,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/03/19&racecourse=HV&RaceNo=1,2026-09-28 04:43:47.24097
+2025-03-23_ST,2025-03-23,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/03/23&racecourse=ST&RaceNo=1,2026-09-28 04:44:02.109351
+2025-03-26_ST,2025-03-26,ST,Sha Tin,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/03/26&racecourse=ST&RaceNo=1,2026-09-28 04:44:13.859121
+2025-03-30_ST,2025-03-30,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/03/30&racecourse=ST&RaceNo=1,2026-09-28 04:44:31.161047
+2025-04-02_HV,2025-04-02,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/04/02&racecourse=HV&RaceNo=1,2026-09-28 04:44:47.060838
+2025-04-06_ST,2025-04-06,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/04/06&racecourse=ST&RaceNo=1,2026-09-28 04:45:01.057549
+2025-04-09_HV,2025-04-09,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/04/09&racecourse=HV&RaceNo=1,2026-09-28 04:45:13.177035
+2025-04-13_ST,2025-04-13,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/04/13&racecourse=ST&RaceNo=1,2026-09-28 04:45:38.033066
+2025-04-16_HV,2025-04-16,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/04/16&racecourse=HV&RaceNo=1,2026-09-28 04:45:49.173916
+2025-04-20_ST,2025-04-20,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/04/20&racecourse=ST&RaceNo=1,2026-09-28 04:46:08.042231
+2025-04-23_HV,2025-04-23,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/04/23&racecourse=HV&RaceNo=1,2026-09-28 04:46:22.405908
+2025-04-27_ST,2025-04-27,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/04/27&racecourse=ST&RaceNo=1,2026-09-28 04:46:35.777625
+2025-04-30_HV,2025-04-30,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/04/30&racecourse=HV&RaceNo=1,2026-09-28 04:46:47.060293
+2025-05-04_ST,2025-05-04,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/05/04&racecourse=ST&RaceNo=1,2026-09-28 04:47:01.415999
+2025-05-07_HV,2025-05-07,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/05/07&racecourse=HV&RaceNo=1,2026-09-28 04:47:12.456598
+2025-05-10_ST,2025-05-10,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/05/10&racecourse=ST&RaceNo=1,2026-09-28 04:47:25.793225
+2025-05-14_HV,2025-05-14,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/05/14&racecourse=HV&RaceNo=1,2026-09-28 04:47:38.278089
+2025-05-18_ST,2025-05-18,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/05/18&racecourse=ST&RaceNo=1,2026-09-28 04:47:54.61595
+2025-05-21_HV,2025-05-21,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/05/21&racecourse=HV&RaceNo=1,2026-09-28 04:48:08.114469
+2025-05-25_ST,2025-05-25,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/05/25&racecourse=ST&RaceNo=1,2026-09-28 04:48:24.190504
+2025-05-28_HV,2025-05-28,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/05/28&racecourse=HV&RaceNo=1,2026-09-28 04:48:40.494016
+2025-05-31_ST,2025-05-31,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/05/31&racecourse=ST&RaceNo=1,2026-09-28 04:48:58.817957
+2025-06-04_HV,2025-06-04,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/06/04&racecourse=HV&RaceNo=1,2026-09-28 04:49:15.145242
+2025-06-08_ST,2025-06-08,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/06/08&racecourse=ST&RaceNo=1,2026-09-28 04:49:28.861164
+2025-06-11_HV,2025-06-11,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/06/11&racecourse=HV&RaceNo=1,2026-09-28 04:49:40.970652
+2025-06-14_ST,2025-06-14,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/06/14&racecourse=ST&RaceNo=1,2026-09-28 04:49:57.065597
+2025-06-22_ST,2025-06-22,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/06/22&racecourse=ST&RaceNo=1,2026-09-28 04:50:12.493581
+2025-06-25_HV,2025-06-25,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/06/25&racecourse=HV&RaceNo=1,2026-09-28 04:50:24.095011
+2025-06-28_ST,2025-06-28,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/06/28&racecourse=ST&RaceNo=1,2026-09-28 04:50:39.325834
+2025-07-01_ST,2025-07-01,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/07/01&racecourse=ST&RaceNo=1,2026-09-28 04:50:53.353355
+2025-07-05_ST,2025-07-05,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/07/05&racecourse=ST&RaceNo=1,2026-09-28 04:51:08.557192
+2025-07-09_HV,2025-07-09,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/07/09&racecourse=HV&RaceNo=1,2026-09-28 04:51:20.535041
+2025-07-13_ST,2025-07-13,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/07/13&racecourse=ST&RaceNo=1,2026-09-28 04:51:40.528443
+2025-07-16_HV,2025-07-16,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/07/16&racecourse=HV&RaceNo=1,2026-09-28 04:51:52.237135
+2025-07-26_HV,2025-07-26,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/07/26&Racecourse=HV&RaceNo=1,2026-09-28 04:51:54.490196
+2025-07-26_ST,2025-07-26,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/07/26&Racecourse=ST&RaceNo=1,2026-09-28 04:51:53.373443
+2025-07-27_HV,2025-07-27,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/07/27&Racecourse=HV&RaceNo=1,2026-09-28 04:51:56.715662
+2025-07-27_ST,2025-07-27,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/07/27&Racecourse=ST&RaceNo=1,2026-09-28 04:51:55.972074
+2025-07-29_HV,2025-07-29,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/07/29&Racecourse=HV&RaceNo=1,2026-09-28 04:51:59.005923
+2025-07-29_ST,2025-07-29,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/07/29&Racecourse=ST&RaceNo=1,2026-09-28 04:51:58.17078
+2025-07-30_HV,2025-07-30,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/07/30&Racecourse=HV&RaceNo=1,2026-09-28 04:52:01.155441
+2025-07-30_ST,2025-07-30,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/07/30&Racecourse=ST&RaceNo=1,2026-09-28 04:52:00.182013
+2025-07-31_HV,2025-07-31,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/07/31&Racecourse=HV&RaceNo=1,2026-09-28 04:52:03.620352
+2025-07-31_ST,2025-07-31,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/07/31&Racecourse=ST&RaceNo=1,2026-09-28 04:52:02.56528
+2025-08-03_HV,2025-08-03,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/08/03&Racecourse=HV&RaceNo=1,2026-09-28 04:52:05.851327
+2025-08-03_ST,2025-08-03,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/08/03&Racecourse=ST&RaceNo=1,2026-09-28 04:52:04.763074
+2025-08-10_HV,2025-08-10,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/08/10&Racecourse=HV&RaceNo=1,2026-09-28 04:52:08.751612
+2025-08-10_ST,2025-08-10,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/08/10&Racecourse=ST&RaceNo=1,2026-09-28 04:52:06.878645
+2025-08-20_HV,2025-08-20,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/08/20&Racecourse=HV&RaceNo=1,2026-09-28 04:52:10.72789
+2025-08-20_ST,2025-08-20,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/08/20&Racecourse=ST&RaceNo=1,2026-09-28 04:52:09.68901
+2025-08-21_HV,2025-08-21,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/08/21&Racecourse=HV&RaceNo=1,2026-09-28 04:52:13.365852
+2025-08-21_ST,2025-08-21,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/08/21&Racecourse=ST&RaceNo=1,2026-09-28 04:52:12.532363
+2025-08-22_HV,2025-08-22,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/08/22&Racecourse=HV&RaceNo=1,2026-09-28 04:52:15.601615
+2025-08-22_ST,2025-08-22,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/08/22&Racecourse=ST&RaceNo=1,2026-09-28 04:52:14.574763
+2025-09-07_ST,2025-09-07,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/09/07&racecourse=ST&RaceNo=1,2026-09-28 04:52:34.153279
+2025-09-10_HV,2025-09-10,HV,Happy Valley,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/09/10&racecourse=HV&RaceNo=1,2026-09-28 04:52:44.533102
+2025-09-13_HV,2025-09-13,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/09/13&Racecourse=HV&RaceNo=1,2026-09-28 04:52:46.507575
+2025-09-13_ST,2025-09-13,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/09/13&Racecourse=ST&RaceNo=1,2026-09-28 04:52:45.545479
+2025-09-14_ST,2025-09-14,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/09/14&racecourse=ST&RaceNo=1,2026-09-28 04:53:01.257248
+2025-09-17_HV,2025-09-17,HV,Happy Valley,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/09/17&racecourse=HV&RaceNo=1,2026-09-28 04:53:11.370617
+2025-09-21_ST,2025-09-21,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/09/21&racecourse=ST&RaceNo=1,2026-09-28 05:36:30.993639
+2025-09-24_HV,2025-09-24,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/09/24&Racecourse=HV&RaceNo=1,2026-09-28 04:58:56.060944
+2025-09-24_ST,2025-09-24,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/09/24&Racecourse=ST&RaceNo=1,2026-09-28 04:58:56.053706
+2025-09-28_ST,2025-09-28,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/09/28&racecourse=ST&RaceNo=1,2026-09-28 04:59:11.83915
+2025-10-01_ST,2025-10-01,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/10/01&racecourse=ST&RaceNo=1,2026-09-28 04:59:24.895922
+2025-10-04_ST,2025-10-04,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/10/04&racecourse=ST&RaceNo=1,2026-09-28 04:59:39.643154
+2025-10-05_HV,2025-10-05,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/10/05&Racecourse=HV&RaceNo=1,2026-09-28 04:59:41.647301
+2025-10-05_ST,2025-10-05,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/10/05&Racecourse=ST&RaceNo=1,2026-09-28 04:59:40.36467
+2025-10-08_HV,2025-10-08,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/10/08&racecourse=HV&RaceNo=1,2026-09-28 04:59:53.498542
+2025-10-11_HV,2025-10-11,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/10/11&Racecourse=HV&RaceNo=1,2026-09-28 04:59:56.060601
+2025-10-11_ST,2025-10-11,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/10/11&Racecourse=ST&RaceNo=1,2026-09-28 04:59:54.280619
+2025-10-12_ST,2025-10-12,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/10/12&racecourse=ST&RaceNo=1,2026-09-28 05:00:09.611101
+2025-10-15_HV,2025-10-15,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/10/15&racecourse=HV&RaceNo=1,2026-09-28 05:00:20.837596
+2025-10-18_HV,2025-10-18,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/10/18&Racecourse=HV&RaceNo=1,2026-09-28 05:00:22.903389
+2025-10-18_ST,2025-10-18,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/10/18&Racecourse=ST&RaceNo=1,2026-09-28 05:00:21.642671
+2025-10-19_ST,2025-10-19,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/10/19&racecourse=ST&RaceNo=1,2026-09-28 05:00:37.175123
+2025-10-22_HV,2025-10-22,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/10/22&racecourse=HV&RaceNo=1,2026-09-28 05:00:51.621834
+2025-10-25_HV,2025-10-25,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/10/25&Racecourse=HV&RaceNo=1,2026-09-28 05:00:53.878263
+2025-10-25_ST,2025-10-25,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/10/25&Racecourse=ST&RaceNo=1,2026-09-28 05:00:52.453293
+2025-10-26_ST,2025-10-26,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/10/26&racecourse=ST&RaceNo=1,2026-09-28 05:01:14.139023
+2025-10-30_ST,2025-10-30,ST,Sha Tin,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/10/30&racecourse=ST&RaceNo=1,2026-09-28 05:01:24.642332
+2025-11-01_HV,2025-11-01,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/11/01&Racecourse=HV&RaceNo=1,2026-09-28 05:01:26.787093
+2025-11-01_ST,2025-11-01,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/11/01&Racecourse=ST&RaceNo=1,2026-09-28 05:01:25.409243
+2025-11-02_HV,2025-11-02,HV,Happy Valley,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/11/02&racecourse=HV&RaceNo=1,2026-09-28 05:01:40.56528
+2025-11-04_HV,2025-11-04,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/11/04&Racecourse=HV&RaceNo=1,2026-09-28 05:01:42.600806
+2025-11-04_ST,2025-11-04,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/11/04&Racecourse=ST&RaceNo=1,2026-09-28 05:01:41.298981
+2025-11-05_HV,2025-11-05,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/11/05&racecourse=HV&RaceNo=1,2026-09-28 05:01:54.374449
+2025-11-08_HV,2025-11-08,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/11/08&Racecourse=HV&RaceNo=1,2026-09-28 05:01:56.197764
+2025-11-08_ST,2025-11-08,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/11/08&Racecourse=ST&RaceNo=1,2026-09-28 05:01:55.161401
+2025-11-09_ST,2025-11-09,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/11/09&racecourse=ST&RaceNo=1,2026-09-28 05:02:14.889015
+2025-11-12_HV,2025-11-12,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/11/12&racecourse=HV&RaceNo=1,2026-09-28 05:02:26.133398
+2025-11-15_ST,2025-11-15,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/11/15&racecourse=ST&RaceNo=1,2026-09-28 05:02:39.287886
+2025-11-16_HV,2025-11-16,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/11/16&Racecourse=HV&RaceNo=1,2026-09-28 05:02:41.36791
+2025-11-16_ST,2025-11-16,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/11/16&Racecourse=ST&RaceNo=1,2026-09-28 05:02:40.683691
+2025-11-19_HV,2025-11-19,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/11/19&racecourse=HV&RaceNo=1,2026-09-28 05:02:55.814836
+2025-11-23_ST,2025-11-23,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/11/23&racecourse=ST&RaceNo=1,2026-09-28 05:03:09.16618
+2025-11-26_HV,2025-11-26,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/11/26&racecourse=HV&RaceNo=1,2026-09-28 05:03:20.690338
+2025-11-30_ST,2025-11-30,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/11/30&racecourse=ST&RaceNo=1,2026-09-28 05:03:34.070464
+2025-12-03_HV,2025-12-03,HV,Happy Valley,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/12/03&racecourse=HV&RaceNo=1,2026-09-28 05:03:44.096642
+2025-12-07_ST,2025-12-07,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/12/07&racecourse=ST&RaceNo=1,2026-09-28 05:03:57.518738
+2025-12-10_HV,2025-12-10,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/12/10&racecourse=HV&RaceNo=1,2026-09-28 05:04:08.969378
+2025-12-14_ST,2025-12-14,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/12/14&racecourse=ST&RaceNo=1,2026-09-28 05:04:22.916842
+2025-12-17_HV,2025-12-17,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/12/17&racecourse=HV&RaceNo=1,2026-09-28 05:04:34.747245
+2025-12-20_ST,2025-12-20,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/12/20&racecourse=ST&RaceNo=1,2026-09-28 05:04:50.742133
+2025-12-23_HV,2025-12-23,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/12/23&racecourse=HV&RaceNo=1,2026-09-28 05:05:06.076205
+2025-12-27_ST,2025-12-27,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2025/12/27&racecourse=ST&RaceNo=1,2026-09-28 05:05:20.057655
+2025-12-28_HV,2025-12-28,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/12/28&Racecourse=HV&RaceNo=1,2026-09-28 05:05:22.803841
+2025-12-28_ST,2025-12-28,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2025/12/28&Racecourse=ST&RaceNo=1,2026-09-28 05:05:20.763253
+2026-01-01_ST,2026-01-01,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/01/01&racecourse=ST&RaceNo=1,2026-09-28 05:05:39.457275
+2026-01-04_ST,2026-01-04,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/01/04&racecourse=ST&RaceNo=1,2026-09-28 05:05:54.472712
+2026-01-07_HV,2026-01-07,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/01/07&racecourse=HV&RaceNo=1,2026-09-28 05:06:09.459935
+2026-01-10_HV,2026-01-10,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/01/10&Racecourse=HV&RaceNo=1,2026-09-28 05:06:11.897319
+2026-01-10_ST,2026-01-10,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/01/10&Racecourse=ST&RaceNo=1,2026-09-28 05:06:11.08805
+2026-01-11_ST,2026-01-11,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/01/11&racecourse=ST&RaceNo=1,2026-09-28 05:06:27.498827
+2026-01-14_HV,2026-01-14,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/01/14&racecourse=HV&RaceNo=1,2026-09-28 05:06:39.37934
+2026-01-18_ST,2026-01-18,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/01/18&racecourse=ST&RaceNo=1,2026-09-28 05:06:59.09431
+2026-01-21_ST,2026-01-21,ST,Sha Tin,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/01/21&racecourse=ST&RaceNo=1,2026-09-28 05:07:10.611619
+2026-01-23_HV,2026-01-23,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/01/23&Racecourse=HV&RaceNo=1,2026-09-28 05:07:12.679054
+2026-01-23_ST,2026-01-23,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/01/23&Racecourse=ST&RaceNo=1,2026-09-28 05:07:11.319225
+2026-01-24_HV,2026-01-24,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/01/24&Racecourse=HV&RaceNo=1,2026-09-28 05:07:15.132934
+2026-01-24_ST,2026-01-24,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/01/24&Racecourse=ST&RaceNo=1,2026-09-28 05:07:13.764571
+2026-01-25_ST,2026-01-25,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/01/25&racecourse=ST&RaceNo=1,2026-09-28 05:07:36.00659
+2026-01-28_HV,2026-01-28,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/01/28&racecourse=HV&RaceNo=1,2026-09-28 05:07:49.503379
+2026-01-31_HV,2026-01-31,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/01/31&Racecourse=HV&RaceNo=1,2026-09-28 05:07:51.345177
+2026-01-31_ST,2026-01-31,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/01/31&Racecourse=ST&RaceNo=1,2026-09-28 05:07:50.216425
+2026-02-01_ST,2026-02-01,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/02/01&racecourse=ST&RaceNo=1,2026-09-28 05:08:06.911078
+2026-02-04_HV,2026-02-04,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/02/04&racecourse=HV&RaceNo=1,2026-09-28 05:08:17.39937
+2026-02-08_ST,2026-02-08,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/02/08&racecourse=ST&RaceNo=1,2026-09-28 05:08:31.575029
+2026-02-11_HV,2026-02-11,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/02/11&racecourse=HV&RaceNo=1,2026-09-28 05:08:42.701154
+2026-02-14_ST,2026-02-14,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/02/14&racecourse=ST&RaceNo=1,2026-09-28 05:08:56.922918
+2026-02-19_ST,2026-02-19,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/02/19&racecourse=ST&RaceNo=1,2026-09-28 05:09:11.632157
+2026-02-22_ST,2026-02-22,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/02/22&racecourse=ST&RaceNo=1,2026-09-28 05:09:27.542434
+2026-02-25_HV,2026-02-25,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/02/25&racecourse=HV&RaceNo=1,2026-09-28 05:09:38.271064
+2026-02-28_HV,2026-02-28,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/02/28&Racecourse=HV&RaceNo=1,2026-09-28 05:09:40.364734
+2026-02-28_ST,2026-02-28,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/02/28&Racecourse=ST&RaceNo=1,2026-09-28 05:09:39.075238
+2026-03-01_ST,2026-03-01,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/03/01&racecourse=ST&RaceNo=1,2026-09-28 05:09:55.151669
+2026-03-04_HV,2026-03-04,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/03/04&racecourse=HV&RaceNo=1,2026-09-28 05:10:10.951838
+2026-03-07_HV,2026-03-07,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/03/07&Racecourse=HV&RaceNo=1,2026-09-28 05:10:12.692379
+2026-03-07_ST,2026-03-07,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/03/07&Racecourse=ST&RaceNo=1,2026-09-28 05:10:11.754387
+2026-03-08_ST,2026-03-08,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/03/08&racecourse=ST&RaceNo=1,2026-09-28 05:10:27.670294
+2026-03-11_HV,2026-03-11,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/03/11&racecourse=HV&RaceNo=1,2026-09-28 05:10:39.162363
+2026-03-15_ST,2026-03-15,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/03/15&racecourse=ST&RaceNo=1,2026-09-28 05:10:54.806577
+2026-03-18_HV,2026-03-18,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/03/18&racecourse=HV&RaceNo=1,2026-09-28 05:11:06.321504
+2026-03-21_HV,2026-03-21,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/03/21&Racecourse=HV&RaceNo=1,2026-09-28 05:11:08.18086
+2026-03-21_ST,2026-03-21,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/03/21&Racecourse=ST&RaceNo=1,2026-09-28 05:11:07.107404
+2026-03-22_ST,2026-03-22,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/03/22&racecourse=ST&RaceNo=1,2026-09-28 05:11:21.743027
+2026-03-25_HV,2026-03-25,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/03/25&racecourse=HV&RaceNo=1,2026-09-28 05:11:33.197325
+2026-03-28_HV,2026-03-28,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/03/28&Racecourse=HV&RaceNo=1,2026-09-28 05:11:35.40357
+2026-03-28_ST,2026-03-28,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/03/28&Racecourse=ST&RaceNo=1,2026-09-28 05:11:34.037193
+2026-03-29_ST,2026-03-29,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/03/29&racecourse=ST&RaceNo=1,2026-09-28 05:11:51.435693
+2026-04-01_ST,2026-04-01,ST,Sha Tin,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/04/01&racecourse=ST&RaceNo=1,2026-09-28 05:12:02.485621
+2026-04-04_HV,2026-04-04,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/04/04&Racecourse=HV&RaceNo=1,2026-09-28 05:12:04.335044
+2026-04-04_ST,2026-04-04,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/04/04&Racecourse=ST&RaceNo=1,2026-09-28 05:12:03.191268
+2026-04-05_HV,2026-04-05,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/04/05&Racecourse=HV&RaceNo=1,2026-09-28 05:12:06.598607
+2026-04-05_ST,2026-04-05,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/04/05&Racecourse=ST&RaceNo=1,2026-09-28 05:12:05.529605
+2026-04-06_ST,2026-04-06,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/04/06&racecourse=ST&RaceNo=1,2026-09-28 05:12:20.956398
+2026-04-08_HV,2026-04-08,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/04/08&racecourse=HV&RaceNo=1,2026-09-28 05:12:32.052064
+2026-04-11_HV,2026-04-11,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/04/11&Racecourse=HV&RaceNo=1,2026-09-28 05:12:33.996634
+2026-04-11_ST,2026-04-11,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/04/11&Racecourse=ST&RaceNo=1,2026-09-28 05:12:32.76237
+2026-04-12_ST,2026-04-12,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/04/12&racecourse=ST&RaceNo=1,2026-09-28 05:12:48.842568
+2026-04-15_HV,2026-04-15,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/04/15&racecourse=HV&RaceNo=1,2026-09-28 05:13:00.137899
+2026-04-18_HV,2026-04-18,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/04/18&Racecourse=HV&RaceNo=1,2026-09-28 05:13:03.371411
+2026-04-18_ST,2026-04-18,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/04/18&Racecourse=ST&RaceNo=1,2026-09-28 05:13:02.127241
+2026-04-19_ST,2026-04-19,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/04/19&racecourse=ST&RaceNo=1,2026-09-28 05:13:18.857939
+2026-04-22_HV,2026-04-22,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/04/22&racecourse=HV&RaceNo=1,2026-09-28 05:21:48.446992
+2026-04-26_ST,2026-04-26,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/04/26&racecourse=ST&RaceNo=1,2026-09-28 05:22:03.183541
+2026-04-29_HV,2026-04-29,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/04/29&racecourse=HV&RaceNo=1,2026-09-28 05:22:14.641104
+2026-05-02_HV,2026-05-02,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/05/02&Racecourse=HV&RaceNo=1,2026-09-28 05:22:16.482643
+2026-05-02_ST,2026-05-02,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/05/02&Racecourse=ST&RaceNo=1,2026-09-28 05:22:15.431085
+2026-05-03_ST,2026-05-03,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/05/03&racecourse=ST&RaceNo=1,2026-09-28 05:22:32.789816
+2026-05-06_ST,2026-05-06,ST,Sha Tin,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/05/06&racecourse=ST&RaceNo=1,2026-09-28 05:22:44.309288
+2026-05-09_ST,2026-05-09,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/05/09&racecourse=ST&RaceNo=1,2026-09-28 05:23:03.715663
+2026-05-10_HV,2026-05-10,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/05/10&Racecourse=HV&RaceNo=1,2026-09-28 05:23:05.648286
+2026-05-10_ST,2026-05-10,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/05/10&Racecourse=ST&RaceNo=1,2026-09-28 05:23:04.475225
+2026-05-13_HV,2026-05-13,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/05/13&racecourse=HV&RaceNo=1,2026-09-28 05:23:17.333418
+2026-05-16_HV,2026-05-16,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/05/16&Racecourse=HV&RaceNo=1,2026-09-28 05:23:20.314027
+2026-05-16_ST,2026-05-16,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/05/16&Racecourse=ST&RaceNo=1,2026-09-28 05:23:18.07243
+2026-05-17_ST,2026-05-17,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/05/17&racecourse=ST&RaceNo=1,2026-09-28 05:23:39.852039
+2026-05-20_HV,2026-05-20,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/05/20&racecourse=HV&RaceNo=1,2026-09-28 05:23:51.801994
+2026-05-23_HV,2026-05-23,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/05/23&Racecourse=HV&RaceNo=1,2026-09-28 05:23:53.814337
+2026-05-23_ST,2026-05-23,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/05/23&Racecourse=ST&RaceNo=1,2026-09-28 05:23:52.543564
+2026-05-24_ST,2026-05-24,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/05/24&racecourse=ST&RaceNo=1,2026-09-28 05:24:09.458035
+2026-05-27_HV,2026-05-27,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/05/27&racecourse=HV&RaceNo=1,2026-09-28 05:24:21.016041
+2026-05-31_ST,2026-05-31,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/05/31&racecourse=ST&RaceNo=1,2026-09-28 05:24:36.134156
+2026-06-03_HV,2026-06-03,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/06/03&racecourse=HV&RaceNo=1,2026-09-28 05:24:47.442427
+2026-06-05_HV,2026-06-05,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/05&Racecourse=HV&RaceNo=1,2026-09-28 05:24:50.374618
+2026-06-05_ST,2026-06-05,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/05&Racecourse=ST&RaceNo=1,2026-09-28 05:24:48.467775
+2026-06-06_HV,2026-06-06,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/06&Racecourse=HV&RaceNo=1,2026-09-28 05:24:52.25514
+2026-06-06_ST,2026-06-06,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/06&Racecourse=ST&RaceNo=1,2026-09-28 05:24:51.193432
+2026-06-07_ST,2026-06-07,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/06/07&racecourse=ST&RaceNo=1,2026-09-28 05:25:09.296545
+2026-06-10_HV,2026-06-10,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/06/10&racecourse=HV&RaceNo=1,2026-09-28 05:25:22.675081
+2026-06-13_ST,2026-06-13,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/06/13&racecourse=ST&RaceNo=1,2026-09-28 05:25:37.901818
+2026-06-14_HV,2026-06-14,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/14&Racecourse=HV&RaceNo=1,2026-09-28 05:25:39.899216
+2026-06-14_ST,2026-06-14,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/14&Racecourse=ST&RaceNo=1,2026-09-28 05:25:38.755231
+2026-06-16_HV,2026-06-16,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/16&Racecourse=HV&RaceNo=1,2026-09-28 05:25:42.332953
+2026-06-16_ST,2026-06-16,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/16&Racecourse=ST&RaceNo=1,2026-09-28 05:25:41.159426
+2026-06-17_HV,2026-06-17,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/17&Racecourse=HV&RaceNo=1,2026-09-28 05:25:44.465979
+2026-06-17_ST,2026-06-17,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/17&Racecourse=ST&RaceNo=1,2026-09-28 05:25:43.629198
+2026-06-18_HV,2026-06-18,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/18&Racecourse=HV&RaceNo=1,2026-09-28 05:25:47.207422
+2026-06-18_ST,2026-06-18,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/18&Racecourse=ST&RaceNo=1,2026-09-28 05:25:46.469384
+2026-06-19_HV,2026-06-19,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/19&Racecourse=HV&RaceNo=1,2026-09-28 05:25:50.30073
+2026-06-19_ST,2026-06-19,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/19&Racecourse=ST&RaceNo=1,2026-09-28 05:25:48.542972
+2026-06-20_HV,2026-06-20,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/20&Racecourse=HV&RaceNo=1,2026-09-28 05:25:52.044729
+2026-06-20_ST,2026-06-20,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/20&Racecourse=ST&RaceNo=1,2026-09-28 05:25:51.088516
+2026-06-21_ST,2026-06-21,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/06/21&racecourse=ST&RaceNo=1,2026-09-28 05:26:07.507809
+2026-06-24_HV,2026-06-24,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/06/24&racecourse=HV&RaceNo=1,2026-09-28 05:26:19.493915
+2026-06-27_ST,2026-06-27,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/archive/localresults?racedate=2026/06/27&racecourse=ST&RaceNo=1,2026-09-28 05:26:36.613319
+2026-06-28_HV,2026-06-28,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/28&Racecourse=HV&RaceNo=1,2026-09-28 05:26:38.733597
+2026-06-28_ST,2026-06-28,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/06/28&Racecourse=ST&RaceNo=1,2026-09-28 05:26:37.321734
+2026-07-01_ST,2026-07-01,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/01&Racecourse=ST&RaceNo=1,2026-09-28 05:27:00.963247
+2026-07-04_ST,2026-07-04,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/04&Racecourse=ST&RaceNo=1,2026-09-28 05:27:23.663978
+2026-07-05_HV,2026-07-05,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/05&Racecourse=HV&RaceNo=1,2026-09-28 05:27:25.816576
+2026-07-05_ST,2026-07-05,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/05&Racecourse=ST&RaceNo=1,2026-09-28 05:27:25.002612
+2026-07-08_HV,2026-07-08,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/08&Racecourse=HV&RaceNo=1,2026-09-28 05:27:44.200736
+2026-07-11_HV,2026-07-11,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/11&Racecourse=HV&RaceNo=1,2026-09-28 05:27:46.186908
+2026-07-11_ST,2026-07-11,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/11&Racecourse=ST&RaceNo=1,2026-09-28 05:27:45.177881
+2026-07-12_ST,2026-07-12,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/12&Racecourse=ST&RaceNo=1,2026-09-28 05:28:12.263209
+2026-07-15_HV,2026-07-15,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/15&Racecourse=HV&RaceNo=1,2026-09-28 05:28:27.939367
+2026-07-18_HV,2026-07-18,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/18&Racecourse=HV&RaceNo=1,2026-09-28 05:28:30.011709
+2026-07-18_ST,2026-07-18,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/18&Racecourse=ST&RaceNo=1,2026-09-28 05:28:28.699505
+2026-07-25_HV,2026-07-25,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/25&Racecourse=HV&RaceNo=1,2026-09-28 05:28:32.381524
+2026-07-25_ST,2026-07-25,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/25&Racecourse=ST&RaceNo=1,2026-09-28 05:28:31.121933
+2026-07-26_HV,2026-07-26,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/26&Racecourse=HV&RaceNo=1,2026-09-28 05:28:35.000233
+2026-07-26_ST,2026-07-26,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/26&Racecourse=ST&RaceNo=1,2026-09-28 05:28:33.65466
+2026-07-28_HV,2026-07-28,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/28&Racecourse=HV&RaceNo=1,2026-09-28 05:28:37.294363
+2026-07-28_ST,2026-07-28,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/28&Racecourse=ST&RaceNo=1,2026-09-28 05:28:36.122464
+2026-07-29_HV,2026-07-29,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/29&Racecourse=HV&RaceNo=1,2026-09-28 05:28:39.529822
+2026-07-29_ST,2026-07-29,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/29&Racecourse=ST&RaceNo=1,2026-09-28 05:28:38.391581
+2026-07-30_HV,2026-07-30,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/30&Racecourse=HV&RaceNo=1,2026-09-28 05:28:41.837892
+2026-07-30_ST,2026-07-30,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/30&Racecourse=ST&RaceNo=1,2026-09-28 05:28:40.799563
+2026-07-31_HV,2026-07-31,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/31&Racecourse=HV&RaceNo=1,2026-09-28 05:28:44.638772
+2026-07-31_ST,2026-07-31,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/07/31&Racecourse=ST&RaceNo=1,2026-09-28 05:28:43.17025
+2026-08-02_HV,2026-08-02,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/02&Racecourse=HV&RaceNo=1,2026-09-28 05:28:47.403429
+2026-08-02_ST,2026-08-02,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/02&Racecourse=ST&RaceNo=1,2026-09-28 05:28:46.585176
+2026-08-08_HV,2026-08-08,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/08&Racecourse=HV&RaceNo=1,2026-09-28 05:28:49.858814
+2026-08-08_ST,2026-08-08,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/08&Racecourse=ST&RaceNo=1,2026-09-28 05:28:49.011296
+2026-08-09_HV,2026-08-09,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/09&Racecourse=HV&RaceNo=1,2026-09-28 05:28:52.395265
+2026-08-09_ST,2026-08-09,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/09&Racecourse=ST&RaceNo=1,2026-09-28 05:28:51.051485
+2026-08-16_HV,2026-08-16,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/16&Racecourse=HV&RaceNo=1,2026-09-28 05:28:54.785192
+2026-08-16_ST,2026-08-16,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/16&Racecourse=ST&RaceNo=1,2026-09-28 05:28:54.056613
+2026-08-19_HV,2026-08-19,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/19&Racecourse=HV&RaceNo=1,2026-09-28 05:28:57.695437
+2026-08-19_ST,2026-08-19,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/19&Racecourse=ST&RaceNo=1,2026-09-28 05:28:56.908968
+2026-08-20_HV,2026-08-20,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/20&Racecourse=HV&RaceNo=1,2026-09-28 05:29:00.112886
+2026-08-20_ST,2026-08-20,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/20&Racecourse=ST&RaceNo=1,2026-09-28 05:28:58.65801
+2026-08-21_HV,2026-08-21,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/21&Racecourse=HV&RaceNo=1,2026-09-28 05:29:02.314083
+2026-08-21_ST,2026-08-21,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/21&Racecourse=ST&RaceNo=1,2026-09-28 05:29:01.27486
+2026-08-22_HV,2026-08-22,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/22&Racecourse=HV&RaceNo=1,2026-09-28 05:29:05.104104
+2026-08-22_ST,2026-08-22,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/22&Racecourse=ST&RaceNo=1,2026-09-28 05:29:03.61458
+2026-08-29_HV,2026-08-29,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/29&Racecourse=HV&RaceNo=1,2026-09-28 05:29:07.482468
+2026-08-29_ST,2026-08-29,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/08/29&Racecourse=ST&RaceNo=1,2026-09-28 05:29:06.078116
+2026-09-05_HV,2026-09-05,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/05&Racecourse=HV&RaceNo=1,2026-09-28 05:29:09.791424
+2026-09-05_ST,2026-09-05,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/05&Racecourse=ST&RaceNo=1,2026-09-28 05:29:08.468743
+2026-09-06_ST,2026-09-06,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/06&Racecourse=ST&RaceNo=1,2026-09-28 05:29:32.717383
+2026-09-09_HV,2026-09-09,HV,Happy Valley,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/09&Racecourse=HV&RaceNo=1,2026-09-28 05:29:47.676982
+2026-09-12_HV,2026-09-12,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/12&Racecourse=HV&RaceNo=1,2026-09-28 05:29:50.602007
+2026-09-12_ST,2026-09-12,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/12&Racecourse=ST&RaceNo=1,2026-09-28 05:29:48.662725
+2026-09-13_ST,2026-09-13,ST,Sha Tin,complete,10,"1,2,3,4,5,6,7,8,9,10",https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/13&Racecourse=ST&RaceNo=1,2026-09-28 05:30:13.993208
+2026-09-16_HV,2026-09-16,HV,Happy Valley,complete,8,"1,2,3,4,5,6,7,8",https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/16&Racecourse=HV&RaceNo=1,2026-09-28 05:30:30.164441
+2026-09-19_HV,2026-09-19,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/19&Racecourse=HV&RaceNo=1,2026-09-28 05:30:32.277965
+2026-09-19_ST,2026-09-19,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/19&Racecourse=ST&RaceNo=1,2026-09-28 05:30:30.939408
+2026-09-20_HV,2026-09-20,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/20&Racecourse=HV&RaceNo=1,2026-09-28 05:30:34.610624
+2026-09-20_ST,2026-09-20,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/20&Racecourse=ST&RaceNo=1,2026-09-28 05:30:34.616759
+2026-09-23_HV,2026-09-23,HV,Happy Valley,complete,9,"1,2,3,4,5,6,7,8,9",https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/23&Racecourse=HV&RaceNo=1,2026-09-28 05:30:51.681356
+2026-09-26_HV,2026-09-26,HV,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/26&Racecourse=HV&RaceNo=1,2026-09-28 05:30:53.628763
+2026-09-26_ST,2026-09-26,ST,,empty,0,,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/26&Racecourse=ST&RaceNo=1,2026-09-28 05:30:52.51942
+2026-09-27_ST,2026-09-27,ST,Sha Tin,complete,11,"1,2,3,4,5,6,7,8,9,10,11",https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/09/27&Racecourse=ST&RaceNo=1,2026-09-28 05:31:06.616044

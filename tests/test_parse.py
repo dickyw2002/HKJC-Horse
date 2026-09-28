@@ -35,6 +35,8 @@ def test_class_line_and_lengths():
     assert parse_lbw("1-1/4") == 1.25
     assert parse_lbw("10-1/2") == 10.5
     assert parse_lbw("ML") is None
+    assert parse_lbw("-SH") == -0.1
+    assert parse_lbw("-HD") == -0.2
     assert parse_finish_seconds("1:10.17") == pytest.approx(70.17)
     assert parse_finish_seconds("0:56.89") == pytest.approx(56.89)
 
