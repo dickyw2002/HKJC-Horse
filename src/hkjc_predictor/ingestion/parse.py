@@ -64,6 +64,10 @@ def clean(value: str | None) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def is_abandoned(html: str) -> bool:
+    return "declared abandoned" in html.lower()
+
+
 def is_no_information(html: str) -> bool:
     tree = HTMLParser(html)
     node = tree.css_first("#errorContainer")
@@ -301,6 +305,46 @@ def _linked_race_numbers(tree: HTMLParser, racecourse: str, current: int) -> tup
     return tuple(sorted(numbers))
 
 
+def _parse_abandoned_page(
+    html: str,
+    *,
+    fallback_date: date | None,
+    fallback_course: str | None,
+    source_url: str | None,
+) -> ParsedRace:
+    """An abandoned race has no runner table. Refund dividends are still published."""
+    tree = HTMLParser(html)
+    meeting_date, racecourse, venue_name = _meeting_identity(tree)
+    meeting_date = meeting_date or fallback_date
+    racecourse = racecourse or (fallback_course.upper() if fallback_course else None)
+    if meeting_date is None or racecourse not in LOCAL_COURSES:
+        raise ParseError("abandoned results page is missing the local meeting banner")
+    race_no = _selected_race_no(tree)
+    if race_no is None:
+        raise ParseError("abandoned results page has no selected race tab")
+    return ParsedRace(
+        meeting_date=meeting_date,
+        racecourse=racecourse,
+        venue_name=venue_name or COURSE_NAMES.get(racecourse),
+        race_no=race_no,
+        season_race_no=None,
+        race_class=None,
+        class_line=None,
+        distance_m=None,
+        rating_band=None,
+        going=None,
+        course=None,
+        race_name=None,
+        prize_hkd=None,
+        sectionals=None,
+        runners=(),
+        dividends=_dividends(tree),
+        race_numbers=_linked_race_numbers(tree, racecourse, race_no),
+        source_url=source_url,
+        abandoned=True,
+    )
+
+
 def _results_table(tree: HTMLParser) -> Node:
     for table in tree.css("table.draggable"):
         header = clean(table.text())
@@ -436,6 +480,16 @@ def _dividends(tree: HTMLParser) -> tuple[ParsedDividend, ...]:
     return tuple(dividends)
 
 
+def _selected_race_no(tree: HTMLParser) -> int | None:
+    """The on-screen race tab uses ``racecard_rt_N_o.gif``."""
+    for image in tree.css("img"):
+        src = image.attributes.get("src") or ""
+        match = re.search(r"racecard_rt_(\d+)_o\.gif", src)
+        if match:
+            return int(match.group(1))
+    return None
+
+
 def parse_results_page(
     html: str,
     *,
@@ -451,6 +505,13 @@ def parse_results_page(
     """
     if is_no_information(html):
         return EmptyPage("No information.")
+    if is_abandoned(html):
+        return _parse_abandoned_page(
+            html,
+            fallback_date=fallback_date,
+            fallback_course=fallback_course,
+            source_url=source_url,
+        )
     tree = HTMLParser(html)
     meeting_date, racecourse, venue_name = _meeting_identity(tree)
     meeting_date = meeting_date or fallback_date

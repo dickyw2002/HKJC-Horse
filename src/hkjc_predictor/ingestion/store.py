@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS races (
     prize_hkd BIGINT,
     sectionals VARCHAR,
     source_url VARCHAR,
+    abandoned BOOLEAN DEFAULT FALSE,
     UNIQUE (meeting_date, racecourse, race_no)
 );
 
@@ -124,6 +125,21 @@ class Store:
         self.path = path
         self.con = duckdb.connect(str(path))
         self.con.execute(SCHEMA)
+        self._ensure_columns()
+
+    def _ensure_columns(self) -> None:
+        columns = {
+            row[0]
+            for row in self.con.execute(
+                """
+                SELECT column_name
+                FROM information_schema.columns
+                WHERE table_name = 'races'
+                """
+            ).fetchall()
+        }
+        if "abandoned" not in columns:
+            self.con.execute("ALTER TABLE races ADD COLUMN abandoned BOOLEAN DEFAULT FALSE")
 
     def close(self) -> None:
         self.con.close()
@@ -133,6 +149,22 @@ class Store:
 
     def __exit__(self, *exc: object) -> None:
         self.close()
+
+    def partial_meetings(self) -> list[tuple[date, str]]:
+        rows = self.con.execute(
+            """
+            SELECT meeting_date, racecourse
+            FROM meetings
+            WHERE status = 'partial'
+            ORDER BY meeting_date, racecourse
+            """
+        ).fetchall()
+        result: list[tuple[date, str]] = []
+        for meeting_date, racecourse in rows:
+            if isinstance(meeting_date, datetime):
+                meeting_date = meeting_date.date()
+            result.append((meeting_date, racecourse))
+        return result
 
     def max_meeting_date(self) -> date | None:
         row = self.con.execute(
@@ -249,8 +281,8 @@ class Store:
                 INSERT INTO races (
                     race_id, meeting_id, meeting_date, racecourse, race_no, season_race_no,
                     race_class, class_line, distance_m, rating_band, going, course,
-                    race_name, prize_hkd, sectionals, source_url
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    race_name, prize_hkd, sectionals, source_url, abandoned
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT (race_id) DO UPDATE SET
                     meeting_id = excluded.meeting_id,
                     meeting_date = excluded.meeting_date,
@@ -266,7 +298,8 @@ class Store:
                     race_name = excluded.race_name,
                     prize_hkd = excluded.prize_hkd,
                     sectionals = excluded.sectionals,
-                    source_url = excluded.source_url
+                    source_url = excluded.source_url,
+                    abandoned = excluded.abandoned
                 """,
                 [
                     race.race_key,
@@ -285,6 +318,7 @@ class Store:
                     race.prize_hkd,
                     race.sectionals,
                     race.source_url,
+                    race.abandoned,
                 ],
             )
             self.con.execute("DELETE FROM runners WHERE race_id = ?", [race.race_key])

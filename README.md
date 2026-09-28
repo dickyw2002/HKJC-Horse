@@ -94,6 +94,7 @@ Saved HTML under `tests/fixtures/` is for parser tests only.
 - Barrier trials, trackwork, and horse-profile fields (age, sex, rating) are out of scope.
 - Gear and equipment codes are not a column on the results table.
 - A meeting that returns "No information." is stored as empty and is not retried after that Hong Kong date.
+- Abandoned races (no runners, pool dividends marked `REFUND`) are stored with `races.abandoned` set. `hkjc update` retries any meeting left `partial`.
 - This repository may contain small CSV/Parquet exports for private research. Do not republish them.
 
 ## Goals

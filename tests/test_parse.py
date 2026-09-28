@@ -207,6 +207,25 @@ def test_synthetic_non_finisher_and_dead_heat():
     assert race.dividends[1].dividend_text == "REFUND"
 
 
+def test_abandoned_race_keeps_refund_dividends():
+    race = parse_results_page(_load("localresults_2024-11-13_HV_r7_abandoned.html"))
+    assert isinstance(race, ParsedRace)
+    assert race.abandoned is True
+    assert race.meeting_date == date(2024, 11, 13)
+    assert race.racecourse == "HV"
+    assert race.race_no == 7
+    assert race.runners == ()
+    assert race.race_numbers[0] == 1
+    assert 7 in race.race_numbers
+    win = next(row for row in race.dividends if row.pool == "WIN")
+    assert win.winning_combination == "-"
+    assert win.dividend_hkd is None
+    assert win.dividend_text == "REFUND"
+    double = next(row for row in race.dividends if row.pool == "6TH DOUBLE")
+    assert double.winning_combination == "7/F"
+    assert double.dividend_hkd == pytest.approx(27.0)
+
+
 def test_results_page_without_tables_raises():
     html = '<div class="raceMeeting_select"><span class="f_fl">Race Meeting: 01/01/2024 Sha Tin</span></div>'
     with pytest.raises(ParseError):

@@ -54,11 +54,43 @@ def backfill(
 
 
 def update(store: Store, fetcher, *, force: bool = False, default_start: date = date(2024, 1, 1)) -> RunSummary:
+    """Finish partial meetings, then fetch anything newer than the latest complete one."""
     today = hk_today()
+    summary = RunSummary()
+    for meeting_date, racecourse in store.partial_meetings():
+        if summary.blocked:
+            break
+        logger.info("retry partial meeting %s %s", meeting_date, racecourse)
+        _ingest_meeting(
+            store,
+            fetcher,
+            meeting_date,
+            racecourse,
+            summary,
+            force=force,
+            today=today,
+            probe=False,
+        )
+    if summary.blocked:
+        return summary
     last = store.max_meeting_date()
     start = default_start if last is None else last
     logger.info("update from %s through %s", start, today)
-    return backfill(store, fetcher, start=start, end=today, force=force)
+    newer = backfill(store, fetcher, start=start, end=today, force=force)
+    return _merge(summary, newer)
+
+
+def _merge(first: RunSummary, second: RunSummary) -> RunSummary:
+    return RunSummary(
+        meetings_complete=first.meetings_complete + second.meetings_complete,
+        meetings_empty=first.meetings_empty + second.meetings_empty,
+        meetings_partial=first.meetings_partial + second.meetings_partial,
+        meetings_skipped=first.meetings_skipped + second.meetings_skipped,
+        races_stored=first.races_stored + second.races_stored,
+        errors=first.errors + second.errors,
+        blocked=first.blocked or second.blocked,
+        notes=[*first.notes, *second.notes],
+    )
 
 
 def discover_meetings(fetcher, start: date, end: date, today: date, *, force: bool = False) -> list[MeetingRef]:
@@ -223,6 +255,7 @@ def _ingest_meeting(
         except ParseError as exc:
             summary.errors += 1
             summary.notes.append(f"{key} race 1 parse: {exc}")
+            logger.warning("parse failed %s race 1: %s", key, exc)
             summary.meetings_partial += 1
             store.upsert_meeting(
                 meeting_date=meeting_date,
@@ -315,6 +348,7 @@ def _ingest_meeting(
         except ParseError as exc:
             summary.errors += 1
             summary.notes.append(f"{key} race {race_no} parse: {exc}")
+            logger.warning("parse failed %s race %s: %s", key, race_no, exc)
             unresolved = True
             continue
         if isinstance(outcome, EmptyPage):

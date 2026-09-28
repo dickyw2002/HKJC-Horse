@@ -73,6 +73,7 @@ class ParsedRace:
     dividends: tuple[ParsedDividend, ...]
     race_numbers: tuple[int, ...]
     source_url: str | None = None
+    abandoned: bool = False
 
     @property
     def meeting_key(self) -> str:
